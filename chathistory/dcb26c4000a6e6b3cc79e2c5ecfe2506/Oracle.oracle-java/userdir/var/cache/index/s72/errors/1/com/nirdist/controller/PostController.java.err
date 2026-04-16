@@ -1,0 +1,37 @@
+ERROR:5,8-5,62:package org.springframework.beans.factory.annotation does not exist
+ERROR:6,8-6,44:package org.springframework.data.domain does not exist
+ERROR:7,8-7,51:package org.springframework.data.domain does not exist
+ERROR:8,8-8,48:package org.springframework.data.domain does not exist
+ERROR:9,8-9,43:package org.springframework.http does not exist
+ERROR:10,8-10,47:package org.springframework.http does not exist
+ERROR:17,2-17,16:cannot find symbol\n  symbol\d class RestController
+ERROR:18,2-18,16:cannot find symbol\n  symbol\d class RequestMapping
+ERROR:19,2-19,13:cannot find symbol\n  symbol\d class CrossOrigin
+ERROR:25,12-25,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:31,12-31,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:41,12-41,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:47,12-47,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:63,12-63,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:11,8-11,47:package org.springframework.web.bind.annotation does not exist
+ERROR:21,6-21,15:cannot find symbol\n  symbol\d   class Autowired\n  location\d class com.nirdist.controller.PostController
+ERROR:25,45-25,56:cannot find symbol\n  symbol\d   class RequestBody\n  location\d class com.nirdist.controller.PostController
+ERROR:24,6-24,17:cannot find symbol\n  symbol\d   class PostMapping\n  location\d class com.nirdist.controller.PostController
+ERROR:31,42-31,54:cannot find symbol\n  symbol\d   class PathVariable\n  location\d class com.nirdist.controller.PostController
+ERROR:30,6-30,16:cannot find symbol\n  symbol\d   class GetMapping\n  location\d class com.nirdist.controller.PostController
+ERROR:41,53-41,65:cannot find symbol\n  symbol\d   class PathVariable\n  location\d class com.nirdist.controller.PostController
+ERROR:40,6-40,16:cannot find symbol\n  symbol\d   class GetMapping\n  location\d class com.nirdist.controller.PostController
+ERROR:48,14-48,26:cannot find symbol\n  symbol\d   class RequestParam\n  location\d class com.nirdist.controller.PostController
+ERROR:49,14-49,26:cannot find symbol\n  symbol\d   class RequestParam\n  location\d class com.nirdist.controller.PostController
+ERROR:46,6-46,16:cannot find symbol\n  symbol\d   class GetMapping\n  location\d class com.nirdist.controller.PostController
+ERROR:63,45-63,57:cannot find symbol\n  symbol\d   class PathVariable\n  location\d class com.nirdist.controller.PostController
+ERROR:62,6-62,19:cannot find symbol\n  symbol\d   class DeleteMapping\n  location\d class com.nirdist.controller.PostController
+ERROR:27,38-27,48:cannot find symbol\n  symbol\d   variable HttpStatus\n  location\d class com.nirdist.controller.PostController
+ERROR:27,16-27,30:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:34,20-34,34:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:36,20-36,34:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:43,16-43,30:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:50,9-50,17:cannot find symbol\n  symbol\d   class Pageable\n  location\d class com.nirdist.controller.PostController
+ERROR:50,29-50,40:cannot find symbol\n  symbol\d   variable PageRequest\n  location\d class com.nirdist.controller.PostController
+ERROR:51,9-51,13:cannot find symbol\n  symbol\d   class Page\n  location\d class com.nirdist.controller.PostController
+ERROR:59,16-59,30:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.PostController
+ERROR:65,16-65,30:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.PostController

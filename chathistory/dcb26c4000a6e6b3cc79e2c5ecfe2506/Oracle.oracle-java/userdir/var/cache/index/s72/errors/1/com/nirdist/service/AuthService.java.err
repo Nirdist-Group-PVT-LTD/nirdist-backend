@@ -1,0 +1,39 @@
+ERROR:10,8-10,62:package org.springframework.beans.factory.annotation does not exist
+ERROR:11,8-11,68:package org.springframework.security.crypto.password does not exist
+ERROR:12,8-12,46:package org.springframework.stereotype does not exist
+ERROR:14,2-14,9:cannot find symbol\n  symbol\d class Service
+ERROR:23,13-23,28:cannot find symbol\n  symbol\d   class PasswordEncoder\n  location\d class com.nirdist.service.AuthService
+ERROR:16,6-16,15:cannot find symbol\n  symbol\d   class Autowired\n  location\d class com.nirdist.service.AuthService
+ERROR:19,6-19,15:cannot find symbol\n  symbol\d   class Autowired\n  location\d class com.nirdist.service.AuthService
+ERROR:22,6-22,15:cannot find symbol\n  symbol\d   class Autowired\n  location\d class com.nirdist.service.AuthService
+ERROR:27,40-27,56:cannot find symbol\n  symbol\d   method getEmail()\n  location\d variable request of type com.nirdist.dto.RegisterRequest
+ERROR:28,20-28,76:constructor AuthResponse in class com.nirdist.dto.AuthResponse cannot be applied to given types;\n  required\d no arguments\n  found\d    <nulltype>,<nulltype>,java.lang.String\n  reason\d actual and formal argument lists differ in length
+ERROR:31,44-31,64:cannot find symbol\n  symbol\d   method getVUsername()\n  location\d variable request of type com.nirdist.dto.RegisterRequest
+ERROR:32,20-32,74:constructor AuthResponse in class com.nirdist.dto.AuthResponse cannot be applied to given types;\n  required\d no arguments\n  found\d    <nulltype>,<nulltype>,java.lang.String\n  reason\d actual and formal argument lists differ in length
+ERROR:37,23-37,39:cannot find symbol\n  symbol\d   method getVName()\n  location\d variable request of type com.nirdist.dto.RegisterRequest
+ERROR:38,27-38,47:cannot find symbol\n  symbol\d   method getVUsername()\n  location\d variable request of type com.nirdist.dto.RegisterRequest
+ERROR:39,23-39,39:cannot find symbol\n  symbol\d   method getEmail()\n  location\d variable request of type com.nirdist.dto.RegisterRequest
+ERROR:40,49-40,68:cannot find symbol\n  symbol\d   method getPassword()\n  location\d variable request of type com.nirdist.dto.RegisterRequest
+ERROR:41,21-41,35:cannot find symbol\n  symbol\d   method getBio()\n  location\d variable request of type com.nirdist.dto.RegisterRequest
+ERROR:42,32-42,57:cannot find symbol\n  symbol\d   method getProfilePicture()\n  location\d variable request of type com.nirdist.dto.RegisterRequest
+ERROR:44,26-44,45:cannot find symbol\n  symbol\d   method save(com.nirdist.entity.User)\n  location\d variable userRepository of type com.nirdist.repository.UserRepository
+ERROR:45,55-45,73:cannot find symbol\n  symbol\d   method getEmail()\n  location\d variable savedUser of type com.nirdist.entity.User
+ERROR:53,17-53,44:cannot find symbol\n  symbol\d   method getProfilePicture()\n  location\d variable savedUser of type com.nirdist.entity.User
+ERROR:52,17-52,33:cannot find symbol\n  symbol\d   method getBio()\n  location\d variable savedUser of type com.nirdist.entity.User
+ERROR:51,17-51,35:cannot find symbol\n  symbol\d   method getEmail()\n  location\d variable savedUser of type com.nirdist.entity.User
+ERROR:50,17-50,39:cannot find symbol\n  symbol\d   method getVUsername()\n  location\d variable savedUser of type com.nirdist.entity.User
+ERROR:49,17-49,35:cannot find symbol\n  symbol\d   method getVName()\n  location\d variable savedUser of type com.nirdist.entity.User
+ERROR:48,17-48,33:cannot find symbol\n  symbol\d   method getVId()\n  location\d variable savedUser of type com.nirdist.entity.User
+ERROR:57,16-57,75:constructor AuthResponse in class com.nirdist.dto.AuthResponse cannot be applied to given types;\n  required\d no arguments\n  found\d    java.lang.String,com.nirdist.dto.UserDTO,java.lang.String\n  reason\d actual and formal argument lists differ in length
+ERROR:61,48-61,64:cannot find symbol\n  symbol\d   method getEmail()\n  location\d variable request of type com.nirdist.dto.LoginRequest
+ERROR:64,54-64,73:cannot find symbol\n  symbol\d   method getPassword()\n  location\d variable request of type com.nirdist.dto.LoginRequest
+ERROR:64,77-64,93:cannot find symbol\n  symbol\d   method getPassword()\n  location\d variable user of type com.nirdist.entity.User
+ERROR:65,20-65,77:constructor AuthResponse in class com.nirdist.dto.AuthResponse cannot be applied to given types;\n  required\d no arguments\n  found\d    <nulltype>,<nulltype>,java.lang.String\n  reason\d actual and formal argument lists differ in length
+ERROR:68,55-68,68:cannot find symbol\n  symbol\d   method getEmail()\n  location\d variable user of type com.nirdist.entity.User
+ERROR:76,17-76,39:cannot find symbol\n  symbol\d   method getProfilePicture()\n  location\d variable user of type com.nirdist.entity.User
+ERROR:75,17-75,28:cannot find symbol\n  symbol\d   method getBio()\n  location\d variable user of type com.nirdist.entity.User
+ERROR:74,17-74,30:cannot find symbol\n  symbol\d   method getEmail()\n  location\d variable user of type com.nirdist.entity.User
+ERROR:73,17-73,34:cannot find symbol\n  symbol\d   method getVUsername()\n  location\d variable user of type com.nirdist.entity.User
+ERROR:72,17-72,30:cannot find symbol\n  symbol\d   method getVName()\n  location\d variable user of type com.nirdist.entity.User
+ERROR:71,17-71,28:cannot find symbol\n  symbol\d   method getVId()\n  location\d variable user of type com.nirdist.entity.User
+ERROR:80,16-80,68:constructor AuthResponse in class com.nirdist.dto.AuthResponse cannot be applied to given types;\n  required\d no arguments\n  found\d    java.lang.String,com.nirdist.dto.UserDTO,java.lang.String\n  reason\d actual and formal argument lists differ in length

@@ -1,0 +1,6 @@
+ERROR:3,8-3,33:package lombok does not exist
+ERROR:4,8-4,19:package lombok does not exist
+ERROR:5,8-5,32:package lombok does not exist
+ERROR:7,2-7,6:cannot find symbol\n  symbol\d class Data
+ERROR:8,2-8,19:cannot find symbol\n  symbol\d class NoArgsConstructor
+ERROR:9,2-9,20:cannot find symbol\n  symbol\d class AllArgsConstructor

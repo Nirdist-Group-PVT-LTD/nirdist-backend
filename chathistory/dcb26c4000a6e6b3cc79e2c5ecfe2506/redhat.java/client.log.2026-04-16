@@ -1,0 +1,37 @@
+{
+  message: 'Removing old folder in globalStorage : 1.53.0',
+  level: 'info',
+  timestamp: '2026-04-16 07:20:28.520'
+}
+{
+  message: "Use the JDK from '' as the initial default project JDK.",
+  level: 'info',
+  timestamp: '2026-04-16 07:20:34.075'
+}
+{
+  message: 'Starting Java server with: c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\jre\\21.0.10-win32-x86_64\\bin\\java --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\lombok\\lombok-1.18.39-4050.jar -jar c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\server\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.54.0\\config_ss_win -data c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\dcb26c4000a6e6b3cc79e2c5ecfe2506\\redhat.java\\ss_ws',
+  level: 'info',
+  timestamp: '2026-04-16 07:20:34.246'
+}
+{
+  message: 'Starting Java server with: c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\jre\\21.0.10-win32-x86_64\\bin\\java --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\lombok\\lombok-1.18.39-4050.jar -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\dcb26c4000a6e6b3cc79e2c5ecfe2506\\redhat.java -Daether.dependencyCollector.impl=bf -jar c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\server\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.54.0\\config_win -data c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\dcb26c4000a6e6b3cc79e2c5ecfe2506\\redhat.java\\jdt_ws',
+  level: 'info',
+  timestamp: '2026-04-16 07:20:34.552'
+}
+{
+  message: 'Apr 16, 2026 7:20:35 AM org.apache.aries.spifly.BaseActivator log\r\n' +
+    'INFO: Registered provider ch.qos.logback.classic.spi.LogbackServiceProvider of service org.slf4j.spi.SLF4JServiceProvider in bundle ch.qos.logback.classic\r\n',
+  level: 'info',
+  timestamp: '2026-04-16 07:20:35.891'
+}
+{
+  message: 'Apr 16, 2026 5:11:37 PM com.microsoft.java.debug.plugin.internal.JavaDebuggerServerPlugin start\r\n' +
+    'INFO: Starting com.microsoft.java.debug.plugin\r\n',
+  level: 'info',
+  timestamp: '2026-04-16 17:11:37.780'
+}
+{
+  message: "Failed to provide hover command Error: The request (id: 288, method: 'java/findLinks') has been cancelled",
+  level: 'error',
+  timestamp: '2026-04-16 20:09:10.809'
+}

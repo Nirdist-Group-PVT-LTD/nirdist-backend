@@ -1,0 +1,18 @@
+ERROR:4,8-4,44:package org.springframework.data.domain does not exist
+ERROR:5,8-5,48:package org.springframework.data.domain does not exist
+ERROR:6,8-6,61:package org.springframework.data.jpa.repository does not exist
+ERROR:7,8-7,53:package org.springframework.data.jpa.repository does not exist
+ERROR:8,8-8,55:package org.springframework.data.repository.query does not exist
+ERROR:9,8-9,49:package org.springframework.stereotype does not exist
+ERROR:15,41-15,54:cannot find symbol\n  symbol\d class JpaRepository
+ERROR:14,2-14,12:cannot find symbol\n  symbol\d class Repository
+ERROR:22,24-22,32:cannot find symbol\n  symbol\d   class Pageable\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:22,5-22,9:cannot find symbol\n  symbol\d   class Page\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:25,72-25,80:cannot find symbol\n  symbol\d   class Pageable\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:25,5-25,9:cannot find symbol\n  symbol\d   class Page\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:17,31-17,36:cannot find symbol\n  symbol\d   class Param\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:16,6-16,11:cannot find symbol\n  symbol\d   class Query\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:20,27-20,32:cannot find symbol\n  symbol\d   class Param\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:19,6-19,11:cannot find symbol\n  symbol\d   class Query\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:25,46-25,51:cannot find symbol\n  symbol\d   class Param\n  location\d interface com.nirdist.repository.PostRepository
+ERROR:24,6-24,11:cannot find symbol\n  symbol\d   class Query\n  location\d interface com.nirdist.repository.PostRepository

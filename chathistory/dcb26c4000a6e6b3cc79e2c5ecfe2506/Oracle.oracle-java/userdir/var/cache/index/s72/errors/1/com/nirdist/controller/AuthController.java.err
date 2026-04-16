@@ -1,0 +1,22 @@
+ERROR:7,8-7,62:package org.springframework.beans.factory.annotation does not exist
+ERROR:8,8-8,43:package org.springframework.http does not exist
+ERROR:9,8-9,47:package org.springframework.http does not exist
+ERROR:12,2-12,16:cannot find symbol\n  symbol\d class RestController
+ERROR:13,2-13,16:cannot find symbol\n  symbol\d class RequestMapping
+ERROR:14,2-14,13:cannot find symbol\n  symbol\d class CrossOrigin
+ERROR:20,12-20,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.AuthController
+ERROR:30,12-30,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.AuthController
+ERROR:10,8-10,47:package org.springframework.web.bind.annotation does not exist
+ERROR:16,6-16,15:cannot find symbol\n  symbol\d   class Autowired\n  location\d class com.nirdist.controller.AuthController
+ERROR:20,51-20,62:cannot find symbol\n  symbol\d   class RequestBody\n  location\d class com.nirdist.controller.AuthController
+ERROR:19,6-19,17:cannot find symbol\n  symbol\d   class PostMapping\n  location\d class com.nirdist.controller.AuthController
+ERROR:30,48-30,59:cannot find symbol\n  symbol\d   class RequestBody\n  location\d class com.nirdist.controller.AuthController
+ERROR:29,6-29,17:cannot find symbol\n  symbol\d   class PostMapping\n  location\d class com.nirdist.controller.AuthController
+ERROR:22,13-22,30:cannot find symbol\n  symbol\d   method getToken()\n  location\d variable response of type com.nirdist.dto.AuthResponse
+ERROR:23,20-23,34:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.AuthController
+ERROR:25,42-25,52:cannot find symbol\n  symbol\d   variable HttpStatus\n  location\d class com.nirdist.controller.AuthController
+ERROR:25,20-25,34:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.AuthController
+ERROR:32,13-32,30:cannot find symbol\n  symbol\d   method getToken()\n  location\d variable response of type com.nirdist.dto.AuthResponse
+ERROR:33,20-33,34:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.AuthController
+ERROR:35,42-35,52:cannot find symbol\n  symbol\d   variable HttpStatus\n  location\d class com.nirdist.controller.AuthController
+ERROR:35,20-35,34:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.AuthController
