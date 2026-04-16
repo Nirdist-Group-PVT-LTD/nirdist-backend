@@ -58,8 +58,14 @@ public class AuthService {
     }
 
     public AuthResponse login(LoginRequest request) {
-        User user = userRepository.findByEmail(request.getEmail())
-                .orElse(null);
+        User user = null;
+        
+        // Try login by email first, then by username
+        if (request.getEmail() != null && !request.getEmail().isEmpty()) {
+            user = userRepository.findByEmail(request.getEmail()).orElse(null);
+        } else if (request.getVUsername() != null && !request.getVUsername().isEmpty()) {
+            user = userRepository.findByVUsername(request.getVUsername()).orElse(null);
+        }
 
         if (user == null || !passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             return new AuthResponse(null, null, "Invalid email or password");
