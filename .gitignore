@@ -1,0 +1,15 @@
+target/
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+.DS_Store
+.env
+.env.local
+*.log
