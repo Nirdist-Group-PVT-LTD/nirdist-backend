@@ -32,7 +32,7 @@ public class Story {
     @Column(name = "caption", columnDefinition = "TEXT")
     private String caption;
 
-    @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @Column(name = "expires_at")

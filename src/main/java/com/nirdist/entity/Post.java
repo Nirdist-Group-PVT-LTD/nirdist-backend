@@ -30,16 +30,16 @@ public class Post {
     @Column(name = "discription", columnDefinition = "TEXT")
     private String discription;
 
-    @Column(name = "post_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "post_time")
     private LocalDateTime postTime;
 
     @Column(name = "reach")
     private Integer reach = 0;
 
-    @Column(name = "media", columnDefinition = "JSON")
+    @Column(name = "media")
     private String media; // JSON array
 
-    @Column(name = "sound", columnDefinition = "JSON")
+    @Column(name = "sound")
     private String sound; // JSON object
 
     @Column(name = "statuse")

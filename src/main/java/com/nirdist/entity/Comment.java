@@ -32,7 +32,7 @@ public class Comment {
     @Column(name = "content", columnDefinition = "TEXT")
     private String content;
 
-    @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @Column(name = "statuse")
