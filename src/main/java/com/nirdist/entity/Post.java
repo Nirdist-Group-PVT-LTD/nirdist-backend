@@ -27,7 +27,7 @@ public class Post {
     @Column(name = "v_username")
     private String vUsername;
 
-    @Column(name = "discription", columnDefinition = "LONGTEXT")
+    @Column(name = "discription", columnDefinition = "TEXT")
     private String discription;
 
     @Column(name = "post_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

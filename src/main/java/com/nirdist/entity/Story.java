@@ -29,7 +29,7 @@ public class Story {
     @Column(name = "media")
     private String media;
 
-    @Column(name = "caption", columnDefinition = "LONGTEXT")
+    @Column(name = "caption", columnDefinition = "TEXT")
     private String caption;
 
     @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
