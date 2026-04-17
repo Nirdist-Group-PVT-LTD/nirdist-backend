@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Date;
 
@@ -23,23 +24,38 @@ public class JwtTokenProvider {
     @Value("${jwt.expiration}")
     private long jwtExpirationMs;
 
+    private byte[] resolveSecretBytes(String secret) {
+        if (secret == null || secret.isBlank()) {
+            throw new IllegalStateException("JWT secret is not configured");
+        }
+
+        String trimmedSecret = secret.trim();
+
+        try {
+            byte[] decodedSecret = Base64.getDecoder().decode(trimmedSecret);
+            if (decodedSecret.length >= 64) {
+                logger.debug("JWT secret decoded from Base64. Length: {} bytes", decodedSecret.length);
+                return decodedSecret;
+            }
+
+            logger.debug("Base64-decoded JWT secret is only {} bytes, checking raw UTF-8 bytes", decodedSecret.length);
+        } catch (IllegalArgumentException e) {
+            logger.debug("JWT secret is not valid Base64, checking raw UTF-8 bytes");
+        }
+
+        byte[] rawSecret = trimmedSecret.getBytes(StandardCharsets.UTF_8);
+        if (rawSecret.length >= 64) {
+            logger.debug("JWT secret using raw UTF-8 bytes. Length: {} bytes", rawSecret.length);
+            return rawSecret;
+        }
+
+        throw new IllegalStateException("JWT secret must be at least 64 bytes for HS512");
+    }
+
     private Key getSigningKey() {
         try {
-            // Decode the Base64-encoded secret to get the raw bytes
-            byte[] decodedSecret = Base64.getDecoder().decode(jwtSecret);
-            logger.debug("JWT secret decoded from Base64. Length: {} bytes", decodedSecret.length);
-            
-            if (decodedSecret.length < 64) {
-                logger.error("JWT secret is only {} bytes but HS512 requires at least 64 bytes (512 bits)", decodedSecret.length);
-                throw new IllegalStateException("JWT secret must be at least 512 bits (64 bytes) for HS512 algorithm");
-            }
-            
-            // Create the signing key from the decoded bytes
-            return Keys.hmacShaKeyFor(decodedSecret);
-        } catch (IllegalArgumentException e) {
-            logger.error("Failed to decode Base64 JWT secret. Ensure jwt.secret in application.properties is valid Base64", e);
-            throw new RuntimeException("Invalid JWT secret configuration", e);
-        } catch (Exception e) {
+            return Keys.hmacShaKeyFor(resolveSecretBytes(jwtSecret));
+        } catch (RuntimeException e) {
             logger.error("Error generating JWT key", e);
             throw new RuntimeException("Failed to generate JWT signing key", e);
         }
@@ -53,7 +69,7 @@ public class JwtTokenProvider {
                     .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
                     .signWith(getSigningKey(), SignatureAlgorithm.HS512)
                     .compact();
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             logger.error("Error generating JWT token for email: " + email, e);
             throw new RuntimeException("Failed to generate JWT token", e);
         }
@@ -67,7 +83,7 @@ public class JwtTokenProvider {
                     .parseClaimsJws(token)
                     .getBody();
             return claims.getSubject();
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             logger.error("Error parsing JWT token", e);
             return null;
         }
@@ -80,7 +96,7 @@ public class JwtTokenProvider {
                     .build()
                     .parseClaimsJws(token);
             return true;
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             logger.debug("JWT token validation failed: " + e.getMessage());
             return false;
         }

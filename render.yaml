@@ -5,10 +5,10 @@ services:
     region: oregon
     plan: free
     buildCommand: chmod +x mvnw && ./mvnw clean install -DskipTests
-    startCommand: java -Dserver.port=$PORT -Dspring.profiles.active=prod -Djwt.secret=$JWT_SECRET -jar target/nirdist-backend-1.0.0.jar
+    startCommand: java -Dserver.port=$PORT -Dspring.profiles.active=prod -jar target/nirdist-backend-1.0.0.jar
     envVars:
       - key: JWT_SECRET
-        value: 51llV0Q+aMC2Rike4xj4evPsOk9RoXd91V2dQq1W4Zr0Eu5IlFM4tXK1oAt9hJYL3t1DTIDiBam7io6Hwgrleg==
+        value: "51llV0Q+aMC2Rike4xj4evPsOk9RoXd91V2dQq1W4Zr0Eu5IlFM4tXK1oAt9hJYL3t1DTIDiBam7io6Hwgrleg=="
       - key: JDBC_DATABASE_URL
         fromDatabase:
           name: nirdist-db
