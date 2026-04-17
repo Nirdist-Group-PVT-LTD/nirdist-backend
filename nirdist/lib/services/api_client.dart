@@ -3,9 +3,9 @@ import 'dart:convert';
 import '../models/models.dart';
 
 class ApiClient {
-  static const String baseUrl = 'https://nirdist-backend.onrender.com/api';  // Direct Render URL
+  static const String baseUrl = 'http://localhost:8080/api';  // Local testing
+  // static const String baseUrl = 'https://nirdist-backend.onrender.com/api';  // Direct Render URL
   // static const String baseUrl = 'https://api.nirdist.com/api';  // Cloudflare CNAME (fix .np issue first)
-  // static const String baseUrl = 'http://localhost:8080/api';  // Local testing
   // For Android device/emulator, use: 'http://10.0.2.2:8080/api'
   static String? _token;
 
