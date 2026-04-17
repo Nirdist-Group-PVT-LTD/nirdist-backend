@@ -1,0 +1,126 @@
+import 'package:flutter/material.dart';
+import '../models/user_model.dart';
+import '../services/api_client.dart';
+
+class AuthProvider extends ChangeNotifier {
+  final ApiClient _apiClient = ApiClient();
+
+  User? _currentUser;
+  String? _token;
+  bool _isLoading = false;
+  String? _errorMessage;
+
+  User? get currentUser => _currentUser;
+  String? get token => _token;
+  bool get isLoading => _isLoading;
+  String? get errorMessage => _errorMessage;
+  bool get isAuthenticated => _currentUser != null && _token != null;
+
+  Future<bool> signup({
+    required String username,
+    required String email,
+    required String password,
+    required String fullName,
+  }) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      final response = await _apiClient.signup(
+        username: username,
+        email: email,
+        password: password,
+        fullName: fullName,
+        bio: '',
+        profilePicture: '',
+      );
+
+      if (response['success'] == true) {
+        _token = response['token'];
+        _currentUser = User(
+          id: response['user']['id'],
+          username: response['user']['username'],
+          email: response['user']['email'],
+          fullName: response['user']['fullName'],
+          bio: response['user']['bio'] ?? '',
+          profilePicture: response['user']['profilePicture'] ?? '',
+          followerCount: 0,
+          followingCount: 0,
+          postCount: 0,
+          isFollowing: false,
+        );
+        notifyListeners();
+        return true;
+      } else {
+        _errorMessage = response['message'] ?? 'Signup failed';
+        notifyListeners();
+        return false;
+      }
+    } catch (e) {
+      _errorMessage = 'Error: ${e.toString()}';
+      notifyListeners();
+      return false;
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  Future<bool> login({
+    required String email,
+    required String password,
+  }) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      final response = await _apiClient.login(
+        email: email,
+        password: password,
+      );
+
+      if (response['success'] == true) {
+        _token = response['token'];
+        _currentUser = User(
+          id: response['user']['id'],
+          username: response['user']['username'],
+          email: response['user']['email'],
+          fullName: response['user']['fullName'],
+          bio: response['user']['bio'] ?? '',
+          profilePicture: response['user']['profilePicture'] ?? '',
+          followerCount: response['user']['followerCount'] ?? 0,
+          followingCount: response['user']['followingCount'] ?? 0,
+          postCount: response['user']['postCount'] ?? 0,
+          isFollowing: false,
+        );
+        notifyListeners();
+        return true;
+      } else {
+        _errorMessage = response['message'] ?? 'Login failed';
+        notifyListeners();
+        return false;
+      }
+    } catch (e) {
+      _errorMessage = 'Error: ${e.toString()}';
+      notifyListeners();
+      return false;
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  void logout() {
+    _currentUser = null;
+    _token = null;
+    _errorMessage = null;
+    notifyListeners();
+  }
+
+  void clearError() {
+    _errorMessage = null;
+    notifyListeners();
+  }
+}

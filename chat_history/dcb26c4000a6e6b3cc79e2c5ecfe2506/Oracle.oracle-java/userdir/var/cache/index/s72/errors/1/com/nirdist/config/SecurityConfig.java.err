@@ -1,0 +1,21 @@
+ERROR:3,8-3,51:package org.springframework.context.annotation does not exist
+ERROR:4,8-4,60:package org.springframework.context.annotation does not exist
+ERROR:5,8-5,80:package org.springframework.security.config.annotation.web.builders does not exist
+ERROR:6,8-6,90:package org.springframework.security.config.annotation.web.configuration does not exist
+ERROR:7,8-7,70:package org.springframework.security.config.http does not exist
+ERROR:8,8-8,60:package org.springframework.security.web does not exist
+ERROR:9,8-9,54:package org.springframework.web.cors does not exist
+ERROR:10,8-10,60:package org.springframework.web.cors does not exist
+ERROR:11,8-11,68:package org.springframework.web.cors does not exist
+ERROR:16,2-16,15:cannot find symbol\n  symbol\d class Configuration
+ERROR:17,2-17,19:cannot find symbol\n  symbol\d class EnableWebSecurity
+ERROR:21,52-21,64:cannot find symbol\n  symbol\d   class HttpSecurity\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:21,12-21,31:cannot find symbol\n  symbol\d   class SecurityFilterChain\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:34,12-34,35:cannot find symbol\n  symbol\d   class CorsConfigurationSource\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:20,6-20,10:cannot find symbol\n  symbol\d   class Bean\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:33,6-33,10:cannot find symbol\n  symbol\d   class Bean\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:25,77-25,98:cannot find symbol\n  symbol\d   variable SessionCreationPolicy\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:35,9-35,26:cannot find symbol\n  symbol\d   class CorsConfiguration\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:35,47-35,64:cannot find symbol\n  symbol\d   class CorsConfiguration\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:41,9-41,40:cannot find symbol\n  symbol\d   class UrlBasedCorsConfigurationSource\n  location\d class com.nirdist.config.SecurityConfig
+ERROR:41,54-41,85:cannot find symbol\n  symbol\d   class UrlBasedCorsConfigurationSource\n  location\d class com.nirdist.config.SecurityConfig

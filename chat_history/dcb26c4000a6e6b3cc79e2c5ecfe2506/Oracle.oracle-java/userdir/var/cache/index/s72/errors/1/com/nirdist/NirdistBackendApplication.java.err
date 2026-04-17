@@ -1,0 +1,12 @@
+ERROR:3,8-3,50:package org.springframework.boot does not exist
+ERROR:4,8-4,68:package org.springframework.boot.autoconfigure does not exist
+ERROR:5,8-5,51:package org.springframework.context.annotation does not exist
+ERROR:6,8-6,70:package org.springframework.web.servlet.config.annotation does not exist
+ERROR:7,8-7,74:package org.springframework.web.servlet.config.annotation does not exist
+ERROR:9,2-9,23:cannot find symbol\n  symbol\d class SpringBootApplication
+ERROR:17,12-17,28:cannot find symbol\n  symbol\d   class WebMvcConfigurer\n  location\d class com.nirdist.NirdistBackendApplication
+ERROR:16,6-16,10:cannot find symbol\n  symbol\d   class Bean\n  location\d class com.nirdist.NirdistBackendApplication
+ERROR:13,9-13,26:cannot find symbol\n  symbol\d   variable SpringApplication\n  location\d class com.nirdist.NirdistBackendApplication
+ERROR:18,20-18,36:cannot find symbol\n  symbol\d   class WebMvcConfigurer\n  location\d class com.nirdist.NirdistBackendApplication
+ERROR:20,41-20,53:cannot find symbol\n  symbol\d class CorsRegistry
+ERROR:19,13-19,22:addCorsMappings(java.lang.Object) in <anonymous com.nirdist.NirdistBackendApplication$1> does not override or implement a method from a supertype

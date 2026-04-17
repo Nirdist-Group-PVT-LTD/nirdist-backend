@@ -1,0 +1,12 @@
+ERROR:4,8-4,61:package org.springframework.data.jpa.repository does not exist
+ERROR:5,8-5,53:package org.springframework.data.jpa.repository does not exist
+ERROR:6,8-6,55:package org.springframework.data.repository.query does not exist
+ERROR:7,8-7,49:package org.springframework.stereotype does not exist
+ERROR:13,44-13,57:cannot find symbol\n  symbol\d class JpaRepository
+ERROR:12,2-12,12:cannot find symbol\n  symbol\d class Repository
+ERROR:15,34-15,39:cannot find symbol\n  symbol\d   class Param\n  location\d interface com.nirdist.repository.CommentRepository
+ERROR:14,6-14,11:cannot find symbol\n  symbol\d   class Query\n  location\d interface com.nirdist.repository.CommentRepository
+ERROR:18,30-18,35:cannot find symbol\n  symbol\d   class Param\n  location\d interface com.nirdist.repository.CommentRepository
+ERROR:17,6-17,11:cannot find symbol\n  symbol\d   class Query\n  location\d interface com.nirdist.repository.CommentRepository
+ERROR:21,30-21,35:cannot find symbol\n  symbol\d   class Param\n  location\d interface com.nirdist.repository.CommentRepository
+ERROR:20,6-20,11:cannot find symbol\n  symbol\d   class Query\n  location\d interface com.nirdist.repository.CommentRepository

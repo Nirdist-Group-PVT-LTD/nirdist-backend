@@ -1,0 +1,2 @@
+ERROR:22,13-22,30:cannot find symbol\n  symbol\d   method getToken()\n  location\d variable response of type com.nirdist.dto.AuthResponse
+ERROR:32,13-32,30:cannot find symbol\n  symbol\d   method getToken()\n  location\d variable response of type com.nirdist.dto.AuthResponse

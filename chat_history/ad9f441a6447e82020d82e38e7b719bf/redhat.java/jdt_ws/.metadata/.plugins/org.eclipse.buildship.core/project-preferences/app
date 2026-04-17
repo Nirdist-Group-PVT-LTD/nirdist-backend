@@ -1,0 +1,12 @@
+#
+#Wed Apr 15 08:23:27 NPT 2026
+buildDir=build
+buildScriptPath=build.gradle.kts
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n</classpath>\n
+derivedResources=.gradle;build
+gradleVersion=8.14
+hasAutoBuildTasks=false
+linkedResources=
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+managedNatures=org.eclipse.jdt.core.javanature
+subprojectPaths=

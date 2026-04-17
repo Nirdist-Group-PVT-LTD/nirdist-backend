@@ -1,0 +1,2034 @@
+!SESSION 2026-04-15 08:28:37.922 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  --pipe=\\.\pipe\lsp-36f5f049b88030d00420dc93842f1d33-sock
+Command-line arguments:  -data c:\Users\Abhishek\AppData\Roaming\Code\User\workspaceStorage\dcb26c4000a6e6b3cc79e2c5ecfe2506\redhat.java\jdt_ws --pipe=\\.\pipe\lsp-36f5f049b88030d00420dc93842f1d33-sock
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.815
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.969
+!MESSAGE Started org.eclipse.buildship.core 60ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.969
+!MESSAGE Started org.eclipse.m2e.core 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:41.452
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:41.644
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:41.658
+!MESSAGE Initializing JDT Language Server (Standard)
+	- Version: 1.57.0-SNAPSHOT (OSGi 1.57.0.202602250925)
+	- Git Commit: 3a4b733 - Changelog for 1.57.0
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.761
+!MESSAGE ProjectRegistryRefreshJob finished 1789ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.909
+!MESSAGE Setting C:\Program Files\Java\jdk-17 as 'JavaSE-17' environment (id:1776221022878)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.913
+!MESSAGE Setting java.home C:\Program Files\Java\jdk-17 as default global VM
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.922
+!MESSAGE Default VM Install changed from  1776221022846-C:\Users\Abhishek\.vscode\extensions\redhat.java-1.53.0-win32-x64\jre\21.0.10-win32-x86_64 to 1776221022878-C:\Program Files\Java\jdk-17
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.941
+!MESSAGE JVM Runtimes changed, saving new configuration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.974
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.975
+!MESSAGE Non-Static Commands: [java.project.import, java.project.changeImportedProjects, java.navigate.openTypeHierarchy, java.project.resolveStackTraceLocation, java.edit.handlePasteEvent, java.edit.stringFormatting, java.project.getSettings, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.createModuleInfo, java.vm.getAllInstalls, java.edit.organizeImports, java.project.refreshDiagnostics, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.updateSettings, java.project.getAll, java.reloadBundles, java.project.isTestFile, java.project.resolveText, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.getTroubleshootingInfo, java.edit.smartSemicolonDetection, java.project.updateSourceAttachment, java.project.updateClassPaths, java.decompile, java.protobuf.generateSources, java.project.resolveSourceAttachment, java.project.updateJdk, java.project.addToSourcePath, java.completion.onDidSelect]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.976
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.977
+!MESSAGE Non-Static Commands: [java.maven.initializeSearcher, java.maven.searchArtifact, java.maven.addDependency, java.maven.controlContext]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.977
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.978
+!MESSAGE Non-Static Commands: [java.project.refreshLib, java.project.checkImportStatus, java.project.list, java.project.generateJar, java.project.getFileImports, java.project.getMainClasses, java.project.getImportClassContent, java.getPackageData, java.project.getDependencies, java.resolvePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.979
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.980
+!MESSAGE Non-Static Commands: [java.gradle.delegateTest]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.981
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.982
+!MESSAGE Non-Static Commands: [vscode.java.test.jacoco.getCoverageDetail, vscode.java.test.findJavaProjects, vscode.java.test.findTestPackagesAndTypes, vscode.java.test.findTestTypesAndMethods, vscode.java.test.resolvePath, vscode.java.test.findTestLocation, vscode.java.test.get.testpath, vscode.java.test.findDirectTestChildrenForClass, vscode.java.test.navigateToTestOrTarget, vscode.java.test.junit.argument, vscode.java.test.generateTests]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.983
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.984
+!MESSAGE Non-Static Commands: [vscode.java.checkProjectSettings, vscode.java.isOnClasspath, vscode.java.fetchUsageData, vscode.java.validateLaunchConfig, vscode.java.resolveInlineVariables, vscode.java.resolveClassFilters, vscode.java.resolveMainMethod, vscode.java.resolveClasspath, vscode.java.resolveBuildFiles, vscode.java.resolveMainClass, vscode.java.updateDebugSettings, vscode.java.resolveSourceUri, vscode.java.fetchPlatformSettings, vscode.java.buildWorkspace, vscode.java.startDebugSession, vscode.java.inferLaunchCommandLength, vscode.java.resolveElementAtSelection, vscode.java.resolveJavaExecutable]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.985
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:42.986
+!MESSAGE Non-Static Commands: [java.intellicode.enable]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:43.019
+!MESSAGE RepositoryRegistryUpdateJob finished 1ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:43.054
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:43.071
+!MESSAGE Importers: GradleBuildServerProjectImporter, GradleProjectImporter, MavenProjectImporter, EclipseProjectImporter, InvisibleProjectImporter
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:43.136
+!MESSAGE Importing Gradle project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:44.022
+!MESSAGE No previous Gradle project at D:\Project\2026\2\nirdist\android, it must be synchronized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:29:22.624
+!MESSAGE android was modified since last time the workspace was opened, must be synchronized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:19.030
+!MESSAGE Workspace initialized in 96005ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:19.111
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:21.793
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:21.795
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:21.800
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 14:19:57.906
+!MESSAGE >> shutdown
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 14:19:58.081
+!MESSAGE >> exit
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 14:19:59.711
+!MESSAGE Shutdown received... waking up main thread
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 14:19:59.792
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is stopping:
+!SESSION 2026-04-16 07:20:34.898 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  --pipe=\\.\pipe\lsp-ccf6389149a557acf352c2a5f22cde8c-sock
+Command-line arguments:  -data c:\Users\Abhishek\AppData\Roaming\Code\User\workspaceStorage\dcb26c4000a6e6b3cc79e2c5ecfe2506\redhat.java\jdt_ws --pipe=\\.\pipe\lsp-ccf6389149a557acf352c2a5f22cde8c-sock
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.863
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:38.449
+!MESSAGE Started org.eclipse.buildship.core 510ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:38.451
+!MESSAGE Started org.eclipse.m2e.core 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:39.130
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:39.556
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:39.576
+!MESSAGE Initializing JDT Language Server (Standard)
+	- Version: 1.58.0-SNAPSHOT (OSGi 1.58.0.202604150653)
+	- Git Commit: 7be965c - Update release date
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:41.637
+!MESSAGE ProjectRegistryRefreshJob finished 3184ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.067
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/visualstudioexptteam.vscodeintellicode-1.3.2/dist/com.microsoft.jdtls.intellicode.core-0.7.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.075
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-gradle-3.17.3/server/com.microsoft.gradle.bs.importer-0.5.4.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.082
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-debug-0.59.0/server/com.microsoft.java.debug.plugin-0.53.2.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.089
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-dependency-0.27.2/server/com.microsoft.jdtls.ext.core-0.24.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.096
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/com.microsoft.java.test.plugin-0.43.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.104
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-api_5.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.115
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-api_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.124
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-engine_5.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.132
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-engine_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.137
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-migrationsupport_5.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.144
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-params_5.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.151
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-params_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.158
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-commons_1.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.166
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-commons_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.172
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-engine_1.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.180
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-engine_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.186
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-launcher_1.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.194
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-launcher_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.200
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-runner_1.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.205
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-api_1.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.211
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-api_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.216
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-commons_1.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.223
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-engine_1.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.229
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-engine_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.237
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-vintage-engine_5.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.242
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.apiguardian.api_1.1.2.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.248
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.eclipse.jdt.junit4.runtime_1.4.0.v20251113-1434.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.254
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.eclipse.jdt.junit5.runtime_1.2.0.v20251113-1434.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.260
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.eclipse.jdt.junit6.runtime_1.0.0.v20251112-1701.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.267
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.jacoco.core_0.8.14.202510111229.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.273
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.opentest4j_1.3.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.280
+!MESSAGE Installed reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-maven-0.45.2/jdtls.ext/com.microsoft.java.maven.plugin/target/com.microsoft.java.maven.plugin-0.39.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.319
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-engine_5.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.328
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-vintage-engine_5.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.355
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-dependency-0.27.2/server/com.microsoft.jdtls.ext.core-0.24.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.365
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-engine_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.372
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-params_5.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.378
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-api_1.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.380
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-commons_1.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.392
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-engine_1.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.398
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.jacoco.core_0.8.14.202510111229.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.405
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-migrationsupport_5.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.414
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-engine_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.445
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-debug-0.59.0/server/com.microsoft.java.debug.plugin-0.53.2.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.459
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.eclipse.jdt.junit6.runtime_1.0.0.v20251112-1701.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.463
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-commons_1.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.475
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.eclipse.jdt.junit4.runtime_1.4.0.v20251113-1434.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.479
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.opentest4j_1.3.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.481
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-engine_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.485
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-engine_1.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.488
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-commons_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.497
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-runner_1.14.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.499
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.apiguardian.api_1.1.2.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.510
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/org.eclipse.jdt.junit5.runtime_1.2.0.v20251113-1434.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.516
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-launcher_1.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.520
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-api_5.14.3.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.524
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-api_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.525
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-launcher_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.528
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-jupiter-params_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.532
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/junit-platform-suite-api_6.0.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.850
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-java-test-0.45.0/server/com.microsoft.java.test.plugin-0.43.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.907
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-maven-0.45.2/jdtls.ext/com.microsoft.java.maven.plugin/target/com.microsoft.java.maven.plugin-0.39.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.930
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/visualstudioexptteam.vscodeintellicode-1.3.2/dist/com.microsoft.jdtls.intellicode.core-0.7.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.955
+!MESSAGE Started reference:file:/c:/Users/Abhishek/.vscode/extensions/vscjava.vscode-gradle-3.17.3/server/com.microsoft.gradle.bs.importer-0.5.4.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.991
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.993
+!MESSAGE Non-Static Commands: [java.project.import, java.project.changeImportedProjects, java.navigate.openTypeHierarchy, java.project.resolveStackTraceLocation, java.edit.handlePasteEvent, java.edit.stringFormatting, java.project.getSettings, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.createModuleInfo, java.vm.getAllInstalls, java.edit.organizeImports, java.project.refreshDiagnostics, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.updateSettings, java.project.getAll, java.reloadBundles, java.project.isTestFile, java.project.resolveText, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.getTroubleshootingInfo, java.edit.smartSemicolonDetection, java.project.updateSourceAttachment, java.project.updateClassPaths, java.decompile, java.protobuf.generateSources, java.project.resolveSourceAttachment, java.project.updateJdk, java.project.addToSourcePath, java.completion.onDidSelect]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.995
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.996
+!MESSAGE Non-Static Commands: [java.project.refreshLib, java.project.checkImportStatus, java.project.list, java.project.generateJar, java.project.getFileImports, java.project.getMainClasses, java.project.getImportClassContent, java.getPackageData, java.project.getDependencies, java.resolvePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:43.998
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.000
+!MESSAGE Non-Static Commands: [vscode.java.checkProjectSettings, vscode.java.isOnClasspath, vscode.java.fetchUsageData, vscode.java.validateLaunchConfig, vscode.java.resolveInlineVariables, vscode.java.resolveClassFilters, vscode.java.resolveMainMethod, vscode.java.resolveClasspath, vscode.java.resolveBuildFiles, vscode.java.resolveMainClass, vscode.java.updateDebugSettings, vscode.java.resolveSourceUri, vscode.java.fetchPlatformSettings, vscode.java.buildWorkspace, vscode.java.startDebugSession, vscode.java.inferLaunchCommandLength, vscode.java.resolveElementAtSelection, vscode.java.resolveJavaExecutable]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.001
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.003
+!MESSAGE Non-Static Commands: [vscode.java.test.jacoco.getCoverageDetail, vscode.java.test.findJavaProjects, vscode.java.test.findTestPackagesAndTypes, vscode.java.test.findTestTypesAndMethods, vscode.java.test.resolvePath, vscode.java.test.findTestLocation, vscode.java.test.get.testpath, vscode.java.test.findDirectTestChildrenForClass, vscode.java.test.navigateToTestOrTarget, vscode.java.test.junit.argument, vscode.java.test.generateTests]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.005
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.008
+!MESSAGE Non-Static Commands: [java.maven.initializeSearcher, java.maven.searchArtifact, java.maven.addDependency, java.maven.controlContext]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.009
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.012
+!MESSAGE Non-Static Commands: [java.intellicode.enable]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.013
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.015
+!MESSAGE Non-Static Commands: [java.gradle.delegateTest]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.207
+!MESSAGE RepositoryRegistryUpdateJob finished 3ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:44.363
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:45.972
+!MESSAGE Importers: GradleBuildServerProjectImporter, GradleProjectImporter, MavenProjectImporter, EclipseProjectImporter, InvisibleProjectImporter
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:46.102
+!MESSAGE Importing Gradle project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:47.978
+!MESSAGE Progressive import: reporting 2 new project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.054
+!MESSAGE Workspace initialized in 7851ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.076
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.456
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.458
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.476
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:25.343
+!MESSAGE Creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:25.504
+!MESSAGE Finished creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:27.288
+!MESSAGE Reconciled 1. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:27.477
+!MESSAGE Reconciled 1. Took 5 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:28.166
+!MESSAGE begin problem for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:28.168
+!MESSAGE 1 problems reported for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:28.174
+!MESSAGE Validated 1. Took 44 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:34.321
+!MESSAGE Reconciled 1. Took 148 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:34.798
+!MESSAGE begin problem for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:34.801
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:34.802
+!MESSAGE 2 problems reported for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:34.803
+!MESSAGE Validated 1. Took 81 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:37.490
+!MESSAGE >> java/validateDocument
+
+!ENTRY java-debug 1 0 2026-04-16 17:11:37.776
+!MESSAGE Starting com.microsoft.java.debug.plugin
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:37.962
+!MESSAGE begin problem for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:37.963
+!MESSAGE 1 problems reported for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:37.964
+!MESSAGE Validated 1. Took 22 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:39.056
+!MESSAGE Reconciled 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:39.507
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:40.781
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:41.232
+!MESSAGE begin problem for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:41.234
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:41.235
+!MESSAGE 2 problems reported for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:41.274
+!MESSAGE begin problem for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:41.276
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:41.277
+!MESSAGE 2 problems reported for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:41.280
+!MESSAGE Validated 2. Took 79 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:44.266
+!MESSAGE Reconciled 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:44.743
+!MESSAGE begin problem for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:44.744
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:44.745
+!MESSAGE 2 problems reported for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:44.746
+!MESSAGE Validated 1. Took 30 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:49.465
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:49.531
+!MESSAGE Reconciled 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:49.999
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:50.000
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:50.000
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:50.002
+!MESSAGE Validated 1. Took 19 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:51.110
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:51.534
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:51.535
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:51.536
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:51.538
+!MESSAGE Validated 1. Took 25 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:52.726
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:52.784
+!MESSAGE Reconciled 1. Took 3 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:53.248
+!MESSAGE begin problem for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:53.249
+!MESSAGE The declared package "com.nirdist.dto" does not match the expected package "main.java.com.nirdist.dto" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:53.250
+!MESSAGE 2 problems reported for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:53.252
+!MESSAGE Validated 1. Took 16 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:56.580
+!MESSAGE Reconciled 1. Took 3 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:56.996
+!MESSAGE begin problem for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:56.997
+!MESSAGE The declared package "com.nirdist.dto" does not match the expected package "main.java.com.nirdist.dto" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:56.997
+!MESSAGE 2 problems reported for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:11:56.998
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:00.345
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:00.415
+!MESSAGE Reconciled 1. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:00.880
+!MESSAGE begin problem for /AuthResponse.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:00.880
+!MESSAGE The declared package "com.nirdist.dto" does not match the expected package "main.java.com.nirdist.dto" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:00.881
+!MESSAGE 2 problems reported for /AuthResponse.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:00.882
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:04.252
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:04.306
+!MESSAGE Reconciled 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:04.721
+!MESSAGE begin problem for /UserDTO.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:04.722
+!MESSAGE The declared package "com.nirdist.dto" does not match the expected package "main.java.com.nirdist.dto" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:04.722
+!MESSAGE 2 problems reported for /UserDTO.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:04.723
+!MESSAGE Validated 1. Took 16 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:31.912
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:32.030
+!MESSAGE Reconciled 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:32.465
+!MESSAGE begin problem for /UserRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:32.467
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:32.468
+!MESSAGE 2 problems reported for /UserRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:32.470
+!MESSAGE Validated 1. Took 33 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:36.538
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:36.970
+!MESSAGE begin problem for /PostRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:36.972
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:36.973
+!MESSAGE 2 problems reported for /PostRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:36.977
+!MESSAGE Validated 1. Took 37 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:42.485
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:42.922
+!MESSAGE begin problem for /StoryRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:42.924
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:42.925
+!MESSAGE 2 problems reported for /StoryRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:42.927
+!MESSAGE Validated 1. Took 23 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:48.102
+!MESSAGE Reconciled 1. Took 5 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:48.541
+!MESSAGE begin problem for /CommentRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:48.542
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:48.543
+!MESSAGE 2 problems reported for /CommentRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:48.545
+!MESSAGE Validated 1. Took 29 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:53.520
+!MESSAGE Reconciled 1. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:53.987
+!MESSAGE begin problem for /JwtTokenProvider.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:53.991
+!MESSAGE The declared package "com.nirdist.security" does not match the expected package "main.java.com.nirdist.security" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:53.996
+!MESSAGE 2 problems reported for /JwtTokenProvider.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:12:53.999
+!MESSAGE Validated 1. Took 26 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:00.013
+!MESSAGE Reconciled 1. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:00.428
+!MESSAGE begin problem for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:00.429
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:00.429
+!MESSAGE 2 problems reported for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:00.430
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:04.517
+!MESSAGE Reconciled 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:04.934
+!MESSAGE begin problem for /UserService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:04.936
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:04.936
+!MESSAGE 2 problems reported for /UserService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:04.937
+!MESSAGE Validated 1. Took 16 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:09.846
+!MESSAGE Reconciled 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:10.257
+!MESSAGE begin problem for /PostService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:10.257
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:10.258
+!MESSAGE 2 problems reported for /PostService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:10.259
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:14.179
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:14.640
+!MESSAGE begin problem for /StoryService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:14.641
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:14.641
+!MESSAGE 2 problems reported for /StoryService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:14.643
+!MESSAGE Validated 1. Took 12 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:21.223
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:21.683
+!MESSAGE begin problem for /CommentService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:21.684
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:21.685
+!MESSAGE 2 problems reported for /CommentService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:21.686
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:26.618
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:27.032
+!MESSAGE begin problem for /CommentService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:27.033
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:27.035
+!MESSAGE 2 problems reported for /CommentService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:27.036
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:27.689
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:27.759
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:28.220
+!MESSAGE begin problem for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:28.221
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:28.221
+!MESSAGE 2 problems reported for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:28.222
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:43.751
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:44.214
+!MESSAGE begin problem for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:44.215
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:44.215
+!MESSAGE 2 problems reported for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:44.216
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:44.667
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:45.143
+!MESSAGE begin problem for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:45.144
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:45.144
+!MESSAGE 2 problems reported for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:45.145
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:49.816
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:49.891
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:50.300
+!MESSAGE begin problem for /UserController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:50.301
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:50.301
+!MESSAGE 2 problems reported for /UserController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:50.302
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:59.164
+!MESSAGE Reconciled 1. Took 3 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:59.585
+!MESSAGE begin problem for /PostController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:59.586
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:59.587
+!MESSAGE 2 problems reported for /PostController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:13:59.587
+!MESSAGE Validated 1. Took 22 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:05.465
+!MESSAGE Reconciled 1. Took 12 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:05.885
+!MESSAGE begin problem for /StoryController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:05.887
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:05.888
+!MESSAGE 2 problems reported for /StoryController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:05.891
+!MESSAGE Validated 1. Took 16 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:12.984
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:13.051
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:13.458
+!MESSAGE begin problem for /CommentController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:13.459
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:13.459
+!MESSAGE 2 problems reported for /CommentController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:13.460
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:17.242
+!MESSAGE Reconciled 1. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:17.650
+!MESSAGE begin problem for /PasswordEncoderConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:17.651
+!MESSAGE The declared package "com.nirdist.config" does not match the expected package "main.java.com.nirdist.config" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:17.651
+!MESSAGE 2 problems reported for /PasswordEncoderConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:14:17.652
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:38:14.106
+!MESSAGE Reconciled 1. Took 5 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:38:14.566
+!MESSAGE begin problem for /UserRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:38:14.567
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:38:14.567
+!MESSAGE 2 problems reported for /UserRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:38:14.568
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.374
+!MESSAGE Reconciled 3. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.831
+!MESSAGE begin problem for /PostRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.832
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.833
+!MESSAGE 2 problems reported for /PostRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.838
+!MESSAGE begin problem for /CommentRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.838
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.838
+!MESSAGE 2 problems reported for /CommentRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.844
+!MESSAGE begin problem for /StoryRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.845
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.845
+!MESSAGE 2 problems reported for /StoryRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:37.846
+!MESSAGE Validated 3. Took 20 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:43.015
+!MESSAGE Reconciled 2. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:43.428
+!MESSAGE begin problem for /PostRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:43.428
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:43.429
+!MESSAGE 2 problems reported for /PostRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:43.434
+!MESSAGE begin problem for /CommentRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:43.434
+!MESSAGE The declared package "com.nirdist.repository" does not match the expected package "main.java.com.nirdist.repository" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:43.435
+!MESSAGE 2 problems reported for /CommentRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 17:40:43.435
+!MESSAGE Validated 2. Took 18 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:02:56.035
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:02:56.468
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:02:56.468
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:02:56.469
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:02:56.470
+!MESSAGE Validated 1. Took 28 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:42.648
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:43.063
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:43.064
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:43.064
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:43.065
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:48.162
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:48.635
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:48.635
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:48.635
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:28:48.636
+!MESSAGE Validated 1. Took 21 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:33:53.994
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:33:54.413
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:33:54.413
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:33:54.413
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:33:54.414
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.716
+!MESSAGE Clearing problems for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.720
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.722
+!MESSAGE Clearing problems for /UserDTO.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.724
+!MESSAGE Clearing problems for /AuthResponse.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.726
+!MESSAGE Clearing problems for /PasswordEncoderConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.769
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.782
+!MESSAGE Clearing problems for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.797
+!MESSAGE Clearing problems for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.799
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.801
+!MESSAGE Clearing problems for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.805
+!MESSAGE Clearing problems for /UserRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.808
+!MESSAGE Clearing problems for /StoryRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.810
+!MESSAGE Clearing problems for /PostRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.812
+!MESSAGE Clearing problems for /CommentRepository.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.814
+!MESSAGE Clearing problems for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.816
+!MESSAGE Clearing problems for /JwtTokenProvider.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.820
+!MESSAGE Clearing problems for /UserService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.823
+!MESSAGE Clearing problems for /PostService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.826
+!MESSAGE Clearing problems for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.828
+!MESSAGE Clearing problems for /StoryService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.833
+!MESSAGE Clearing problems for /UserController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.836
+!MESSAGE Clearing problems for /CommentService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.838
+!MESSAGE Clearing problems for /PostController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.842
+!MESSAGE Clearing problems for /StoryController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:40:09.845
+!MESSAGE Clearing problems for /CommentController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:42:56.705
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:42:57.168
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:42:57.169
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:42:57.169
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:42:57.170
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:45:56.615
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:48:34.593
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:48:35.057
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:48:35.058
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:48:35.058
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:48:35.059
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:51:34.555
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:54:25.592
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:54:26.008
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:54:26.009
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:54:26.009
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:54:26.010
+!MESSAGE Validated 1. Took 16 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:57:25.549
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:57:28.383
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:57:28.797
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:57:28.798
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:57:28.798
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 20:57:28.799
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:00:28.344
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:00:41.824
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:00:42.289
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:00:42.289
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:00:42.289
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:00:42.289
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:03:41.742
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:05:08.803
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:05:09.242
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:05:09.244
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:05:09.244
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:05:09.245
+!MESSAGE Validated 1. Took 26 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:08:08.708
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:09:21.999
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:09:22.417
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:09:22.417
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:09:22.418
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:09:22.418
+!MESSAGE Validated 1. Took 17 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:12:21.912
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:12:25.915
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:12:26.332
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:12:26.332
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:12:26.333
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:12:26.334
+!MESSAGE Validated 1. Took 17 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:15:25.814
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:17:21.727
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:17:22.151
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:17:22.151
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:17:22.151
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:17:22.152
+!MESSAGE Validated 1. Took 17 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:20:21.631
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:23:09.097
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:23:09.566
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:23:09.567
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:23:09.567
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:23:09.568
+!MESSAGE Validated 1. Took 18 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:26:08.999
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:32:38.188
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:32:38.615
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:32:38.615
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:32:38.617
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:32:38.617
+!MESSAGE Validated 1. Took 21 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:35:38.089
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:36:16.172
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:36:16.591
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:36:16.592
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:36:16.592
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:36:16.594
+!MESSAGE Validated 1. Took 18 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:39:16.140
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:41:09.994
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:41:10.414
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:41:10.414
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:41:10.414
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:41:10.415
+!MESSAGE Validated 1. Took 19 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 21:44:09.908
+!MESSAGE Clearing problems for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:11.727
+!MESSAGE Reconciled 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:12.174
+!MESSAGE begin problem for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:12.175
+!MESSAGE 1 problems reported for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:12.189
+!MESSAGE Validated 1. Took 44 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:27.996
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:28.451
+!MESSAGE begin problem for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:28.452
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:28.453
+!MESSAGE 2 problems reported for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:28.454
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:47.769
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:47.869
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:48.284
+!MESSAGE begin problem for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:48.284
+!MESSAGE The declared package "com.nirdist.config" does not match the expected package "main.java.com.nirdist.config" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:48.285
+!MESSAGE 2 problems reported for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:48.286
+!MESSAGE Validated 1. Took 16 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:49.915
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:50.380
+!MESSAGE begin problem for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:50.381
+!MESSAGE The declared package "com.nirdist.config" does not match the expected package "main.java.com.nirdist.config" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:50.381
+!MESSAGE 2 problems reported for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:32:50.382
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:35:11.251
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:35:27.882
+!MESSAGE Clearing problems for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:23.865
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:24.325
+!MESSAGE begin problem for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:24.326
+!MESSAGE The declared package "com.nirdist.dto" does not match the expected package "main.java.com.nirdist.dto" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:24.326
+!MESSAGE 2 problems reported for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:24.327
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:26.972
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:27.429
+!MESSAGE begin problem for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:27.430
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:27.430
+!MESSAGE 2 problems reported for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:27.431
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:35.481
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:35.502
+!MESSAGE Clearing problems for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:35.593
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:35.599
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:46.533
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:46.994
+!MESSAGE begin problem for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:46.994
+!MESSAGE The declared package "com.nirdist.config" does not match the expected package "main.java.com.nirdist.config" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:46.994
+!MESSAGE 2 problems reported for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:38:46.995
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:23.776
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:26.890
+!MESSAGE Clearing problems for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:59.264
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:59.286
+!MESSAGE Clearing problems for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:59.378
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:59.390
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:59.490
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:59.496
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:59.586
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:41:59.605
+!MESSAGE Clearing problems for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.281
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.295
+!MESSAGE Clearing problems for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.372
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.379
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.466
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.489
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.583
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.587
+!MESSAGE Clearing problems for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.667
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.679
+!MESSAGE Clearing problems for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.771
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.792
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.894
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.917
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.957
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:44:30.965
+!MESSAGE Clearing problems for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:53:51.433
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:53:51.452
+!MESSAGE Clearing problems for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:53:51.557
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:53:51.572
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:53:51.681
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:53:51.687
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:53:51.727
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:53:51.731
+!MESSAGE Clearing problems for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:22.300
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:22.721
+!MESSAGE begin problem for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:22.722
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:22.722
+!MESSAGE 2 problems reported for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:22.722
+!MESSAGE Validated 1. Took 12 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:25.893
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:26.358
+!MESSAGE begin problem for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:26.359
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:26.359
+!MESSAGE 2 problems reported for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:26.360
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:27.587
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:28.064
+!MESSAGE begin problem for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:28.064
+!MESSAGE The declared package "com.nirdist.controller" does not match the expected package "main.java.com.nirdist.controller" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:28.065
+!MESSAGE 2 problems reported for /AuthController.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:56:28.065
+!MESSAGE Validated 1. Took 12 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:33.885
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:34.295
+!MESSAGE begin problem for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:34.296
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:34.296
+!MESSAGE 2 problems reported for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:34.300
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:43.438
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:43.461
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:45.644
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:46.109
+!MESSAGE begin problem for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:46.110
+!MESSAGE The declared package "com.nirdist.dto" does not match the expected package "main.java.com.nirdist.dto" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:46.111
+!MESSAGE 2 problems reported for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:46.111
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:50.215
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:50.629
+!MESSAGE begin problem for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:50.629
+!MESSAGE The declared package "com.nirdist.dto" does not match the expected package "main.java.com.nirdist.dto" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:50.629
+!MESSAGE 2 problems reported for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:50.630
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:54.978
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:55.437
+!MESSAGE begin problem for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:55.438
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:55.438
+!MESSAGE 2 problems reported for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:55.438
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:56.601
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:57.061
+!MESSAGE begin problem for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:57.062
+!MESSAGE The declared package "com.nirdist.dto" does not match the expected package "main.java.com.nirdist.dto" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:57.062
+!MESSAGE 2 problems reported for /LoginRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 22:59:57.063
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:00:01.250
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:00:01.672
+!MESSAGE begin problem for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:00:01.673
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:00:01.673
+!MESSAGE 2 problems reported for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:00:01.673
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:17.463
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:17.482
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:17.528
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:17.546
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:38.955
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:38.967
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:39.005
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:39.016
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:41.151
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:41.157
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:41.245
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:01:41.249
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:06:26.081
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:06:26.093
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:06:26.141
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:06:26.175
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:09:55.932
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:09:55.944
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:09:56.034
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:09:56.056
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:15:39.658
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:15:40.085
+!MESSAGE begin problem for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:15:40.085
+!MESSAGE The declared package "com.nirdist.service" does not match the expected package "main.java.com.nirdist.service" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:15:40.086
+!MESSAGE 2 problems reported for /AuthService.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:15:40.086
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:16:25.241
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:16:25.322
+!MESSAGE Clearing problems for /RegisterRequest.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:16:25.428
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:16:25.493
+!MESSAGE Clearing problems for /NirdistBackendApplication.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:07.716
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:08.176
+!MESSAGE begin problem for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:08.176
+!MESSAGE The declared package "com.nirdist.config" does not match the expected package "main.java.com.nirdist.config" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:08.177
+!MESSAGE 2 problems reported for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:08.178
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:09.416
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:09.874
+!MESSAGE begin problem for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:09.875
+!MESSAGE The declared package "com.nirdist.config" does not match the expected package "main.java.com.nirdist.config" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:09.877
+!MESSAGE 2 problems reported for /SecurityConfig.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:24:09.877
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:36:29.983
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:36:30.446
+!MESSAGE begin problem for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:36:30.446
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:36:30.447
+!MESSAGE 2 problems reported for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:36:30.448
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:39:29.937
+!MESSAGE Clearing problems for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:43:11.818
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:43:12.283
+!MESSAGE begin problem for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:43:12.284
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:43:12.285
+!MESSAGE 2 problems reported for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:43:12.285
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:46:11.726
+!MESSAGE Clearing problems for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:18.446
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:18.913
+!MESSAGE begin problem for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:18.914
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:18.915
+!MESSAGE 2 problems reported for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:18.915
+!MESSAGE Validated 1. Took 18 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.066
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.171
+!MESSAGE Reconciled 2. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.303
+!MESSAGE Reconciled 4. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.713
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.714
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.714
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.726
+!MESSAGE begin problem for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.727
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.727
+!MESSAGE 2 problems reported for /User.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.739
+!MESSAGE begin problem for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.740
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.740
+!MESSAGE 2 problems reported for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.752
+!MESSAGE begin problem for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.753
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.753
+!MESSAGE 2 problems reported for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:26.754
+!MESSAGE Validated 4. Took 49 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:32.140
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:32.560
+!MESSAGE begin problem for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:32.561
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:32.561
+!MESSAGE 2 problems reported for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:32.562
+!MESSAGE Validated 1. Took 16 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:36.847
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:37.311
+!MESSAGE begin problem for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:37.312
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:37.312
+!MESSAGE 2 problems reported for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 23:51:37.312
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:21.669
+!MESSAGE Reconciled 3. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.081
+!MESSAGE begin problem for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.082
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.082
+!MESSAGE 2 problems reported for /Comment.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.094
+!MESSAGE begin problem for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.095
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.095
+!MESSAGE 2 problems reported for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.106
+!MESSAGE begin problem for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.106
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.107
+!MESSAGE 2 problems reported for /Story.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:22.107
+!MESSAGE Validated 3. Took 36 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:24.065
+!MESSAGE >> java/validateDocument
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:24.489
+!MESSAGE begin problem for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:24.490
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:24.490
+!MESSAGE 2 problems reported for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:24.491
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:31.994
+!MESSAGE Reconciled 1. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:32.459
+!MESSAGE begin problem for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:32.460
+!MESSAGE The declared package "com.nirdist.entity" does not match the expected package "main.java.com.nirdist.entity" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:32.460
+!MESSAGE 2 problems reported for /Post.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-17 00:22:32.461
+!MESSAGE Validated 1. Took 15 ms

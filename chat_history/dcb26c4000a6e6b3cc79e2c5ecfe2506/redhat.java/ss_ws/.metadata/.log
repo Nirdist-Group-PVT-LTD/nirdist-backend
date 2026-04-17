@@ -1,0 +1,129 @@
+!SESSION 2026-04-15 08:28:37.687 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  --pipe=\\.\pipe\lsp-fe32c1d412a526bcbdfa75fd2e5a71e2-sock
+Command-line arguments:  -data c:\Users\Abhishek\AppData\Roaming\Code\User\workspaceStorage\dcb26c4000a6e6b3cc79e2c5ecfe2506\redhat.java\ss_ws --pipe=\\.\pipe\lsp-fe32c1d412a526bcbdfa75fd2e5a71e2-sock
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:39.826
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:39.934
+!MESSAGE There is no bundle org.eclipse.buildship.core.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:39.935
+!MESSAGE There is no bundle org.eclipse.m2e.core.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:39.939
+!MESSAGE ProjectRegistryRefreshJob finished 3ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.115
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.178
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.182
+!MESSAGE Initializing JDT Language Server (Syntax)
+	- Version: 1.57.0-SNAPSHOT (OSGi 1.57.0.202602250925)
+	- Git Commit: 3a4b733 - Changelog for 1.57.0
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.334
+!MESSAGE Setting C:\Program Files\Java\jdk-17 as 'JavaSE-17' environment (id:1776221020302)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.338
+!MESSAGE Setting java.home C:\Program Files\Java\jdk-17 as default global VM
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.356
+!MESSAGE JVM Runtimes changed, saving new configuration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.375
+!MESSAGE Workspace initialized in 6ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.390
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.400
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.402
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.406
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:28:40.408
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:20.483
+!MESSAGE >> shutdown
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:20.567
+!MESSAGE >> exit
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:20.890
+!MESSAGE Shutdown received... waking up main thread
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-15 08:30:20.904
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is stopping:
+!SESSION 2026-04-16 07:20:34.886 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  --pipe=\\.\pipe\lsp-0483eb9f363b6ce89c34bcd9c1348228-sock
+Command-line arguments:  -data c:\Users\Abhishek\AppData\Roaming\Code\User\workspaceStorage\dcb26c4000a6e6b3cc79e2c5ecfe2506\redhat.java\ss_ws --pipe=\\.\pipe\lsp-0483eb9f363b6ce89c34bcd9c1348228-sock
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.224
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.307
+!MESSAGE There is no bundle org.eclipse.buildship.core.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.310
+!MESSAGE There is no bundle org.eclipse.m2e.core.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.317
+!MESSAGE ProjectRegistryRefreshJob finished 4ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.658
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.860
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.868
+!MESSAGE Initializing JDT Language Server (Syntax)
+	- Version: 1.58.0-SNAPSHOT (OSGi 1.58.0.202604150653)
+	- Git Commit: 7be965c - Update release date
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:37.988
+!MESSAGE Workspace initialized in 22ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:38.037
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:38.058
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:38.062
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:38.070
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:38.081
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.481
+!MESSAGE >> shutdown
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.506
+!MESSAGE >> exit
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.749
+!MESSAGE Shutdown received... waking up main thread
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-04-16 07:20:52.772
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is stopping:

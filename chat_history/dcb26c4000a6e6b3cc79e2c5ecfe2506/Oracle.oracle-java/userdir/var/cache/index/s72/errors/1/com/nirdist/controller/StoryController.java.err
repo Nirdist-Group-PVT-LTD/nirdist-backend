@@ -1,0 +1,29 @@
+ERROR:5,8-5,62:package org.springframework.beans.factory.annotation does not exist
+ERROR:6,8-6,43:package org.springframework.http does not exist
+ERROR:7,8-7,47:package org.springframework.http does not exist
+ERROR:12,2-12,16:cannot find symbol\n  symbol\d class RestController
+ERROR:13,2-13,16:cannot find symbol\n  symbol\d class RequestMapping
+ERROR:14,2-14,13:cannot find symbol\n  symbol\d class CrossOrigin
+ERROR:20,12-20,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:26,12-26,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:36,12-36,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:42,12-42,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:48,12-48,26:cannot find symbol\n  symbol\d   class ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:8,8-8,47:package org.springframework.web.bind.annotation does not exist
+ERROR:16,6-16,15:cannot find symbol\n  symbol\d   class Autowired\n  location\d class com.nirdist.controller.StoryController
+ERROR:20,47-20,58:cannot find symbol\n  symbol\d   class RequestBody\n  location\d class com.nirdist.controller.StoryController
+ERROR:19,6-19,17:cannot find symbol\n  symbol\d   class PostMapping\n  location\d class com.nirdist.controller.StoryController
+ERROR:26,44-26,56:cannot find symbol\n  symbol\d   class PathVariable\n  location\d class com.nirdist.controller.StoryController
+ERROR:25,6-25,16:cannot find symbol\n  symbol\d   class GetMapping\n  location\d class com.nirdist.controller.StoryController
+ERROR:36,56-36,68:cannot find symbol\n  symbol\d   class PathVariable\n  location\d class com.nirdist.controller.StoryController
+ERROR:35,6-35,16:cannot find symbol\n  symbol\d   class GetMapping\n  location\d class com.nirdist.controller.StoryController
+ERROR:41,6-41,16:cannot find symbol\n  symbol\d   class GetMapping\n  location\d class com.nirdist.controller.StoryController
+ERROR:48,46-48,58:cannot find symbol\n  symbol\d   class PathVariable\n  location\d class com.nirdist.controller.StoryController
+ERROR:47,6-47,19:cannot find symbol\n  symbol\d   class DeleteMapping\n  location\d class com.nirdist.controller.StoryController
+ERROR:22,38-22,48:cannot find symbol\n  symbol\d   variable HttpStatus\n  location\d class com.nirdist.controller.StoryController
+ERROR:22,16-22,30:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:29,20-29,34:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:31,20-31,34:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:38,16-38,30:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:44,16-44,30:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.StoryController
+ERROR:50,16-50,30:cannot find symbol\n  symbol\d   variable ResponseEntity\n  location\d class com.nirdist.controller.StoryController

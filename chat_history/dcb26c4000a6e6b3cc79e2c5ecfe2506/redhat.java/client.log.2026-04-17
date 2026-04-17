@@ -1,0 +1,5 @@
+{
+  message: "Use the JDK from '' as the initial default project JDK.",
+  level: 'info',
+  timestamp: '2026-04-17 06:37:28.994'
+}

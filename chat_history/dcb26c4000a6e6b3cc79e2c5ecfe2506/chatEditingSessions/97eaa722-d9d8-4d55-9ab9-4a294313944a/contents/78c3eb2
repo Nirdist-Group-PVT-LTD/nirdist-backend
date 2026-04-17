@@ -1,0 +1,291 @@
+# Nirdist Backend - Complete Setup Guide
+
+## Quick Start (5 minutes)
+
+### Step 1: Install Dependencies 
+```bash
+cd nirdist-backend
+npm install
+```
+
+### Step 2: Setup Database
+
+Make sure MySQL is running, then:
+```bash
+mysql -u root -p
+CREATE DATABASE nirdist;
+exit
+```
+
+Import schema:
+```bash
+mysql -u root -p nirdist < ../data.sql
+```
+
+### Step 3: Configure Environment
+
+Create `.env` file:
+```bash
+cp .env.example .env
+# Edit .env with your MySQL credentials
+```
+
+**Example .env:**
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=nirdist
+DB_PORT=3306
+JWT_SECRET=your-very-long-secret-key-change-in-production
+JWT_EXPIRE=7d
+PORT=3000
+NODE_ENV=development
+```
+
+### Step 4: Start Backend
+
+```bash
+npm run dev
+```
+
+✅ Backend running at: `http://localhost:3000`
+
+---
+
+## API Testing
+
+### 1. Register User
+```bash
+curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "v_name": "John Doe",
+    "v_username": "johndoe",
+    "email": "john@example.com",
+    "password": "Password123!",
+    "phone": "+1234567890"
+  }'
+```
+
+Response:
+```json
+{
+  "success": true,
+  "token": "eyJhbGciOiJIUzI1NiIs...",
+  "user": {
+    "v_id": 1,
+    "v_name": "John Doe",
+    "v_username": "johndoe"
+  }
+}
+```
+
+### 2. Login User
+```bash
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "v_username": "johndoe",
+    "password": "Password123!"
+  }'
+```
+
+### 3. Get User Profile
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+  http://localhost:3000/api/users/1
+```
+
+### 4. Create Post
+```bash
+curl -X POST http://localhost:3000/api/posts \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "v_id": 1,
+    "discription": "This is my first post!",
+    "s_id": null
+  }'
+```
+
+### 5. Get Feed
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+  "http://localhost:3000/api/posts/feed?page=1&limit=10"
+```
+
+### 6. Add Reaction
+```bash
+curl -X POST http://localhost:3000/api/reactions/1 \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"pr_type": "like"}'
+```
+
+Supported reactions: `like, love, haha, wow, sad, angry`
+
+### 7. Add Comment
+```bash
+curl -X POST http://localhost:3000/api/comments/1 \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"post_comment_text": "Great post!"}'
+```
+
+### 8. Follow User
+```bash
+curl -X POST http://localhost:3000/api/follows/2/follow \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+
+### 9. Search Users
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+  "http://localhost:3000/api/users/search?q=john"
+```
+
+---
+
+## Project Structure
+
+```
+nirdist-backend/
+├── config/
+│   ├── database.js          # MySQL connection pool
+│   └── setupDatabase.js     # DB initialization script
+├── controllers/
+│   ├── authController.js    # Auth logic
+│   ├── userController.js    # User profiles
+│   ├── postController.js    # Post CRUD
+│   ├── commentController.js # Comments
+│   ├── reactionController.js # Reactions
+│   ├── storyController.js   # Stories (24h)
+│   ├── noteController.js    # Notes
+│   ├── soundController.js   # Audio/Music
+│   └── followController.js  # Follow system
+├── middleware/
+│   └── auth.js              # JWT validation
+├── routes/
+│   ├── auth.js
+│   ├── users.js
+│   ├── posts.js
+│   ├── comments.js
+│   ├── reactions.js
+│   ├── stories.js
+│   ├── notes.js
+│   ├── sounds.js
+│   └── follows.js
+├── server.js                # Express app
+├── package.json
+├── .env.example
+├── .env                     # (Create after copying .env.example)
+└── README.md
+```
+
+---
+
+## Database Tables
+
+**Users:**
+- `variant` - User accounts
+- `variant_email` - Multiple emails per user
+- `variant_number` - Multiple phone numbers
+- `variant_username` - Username history
+
+**Content:**
+- `post` - Posts
+- `story` - 24-hour stories
+- `notes` - Notes/thoughts
+- `sound` - Audio library
+- `sound_produce` - User-created sounds
+
+**Interactions:**
+- `post_reaction` - Reactions to posts
+- `post_comment` - Comments
+- `post_comment_reaction` - Reactions to comments
+- `post_share` - Sharing posts
+- `post_save` - Saving posts
+- `story_reaction` - Story reactions
+- `notes_reaction` - Note reactions
+
+**Social:**
+- `follows` - Follow relationships
+
+---
+
+## Common Issues & Fixes
+
+### `Error: connect ECONNREFUSED 127.0.0.1:3306`
+MySQL not running:
+```bash
+# Windows
+mysql.exe --version  # Check if installed
+# Start MySQL service from Services
+
+# macOS
+brew services start mysql
+
+# Linux
+sudo systemctl start mysql
+```
+
+### `Error: ER_ACCESS_DENIED_FOR_USER`
+Wrong MySQL credentials. Check `.env` values:
+```bash
+# Test connection
+mysql -u root -p -h localhost
+```
+
+### `Error: ER_NO_DB_ERROR`
+Database doesn't exist:
+```bash
+mysql -u root -p
+CREATE DATABASE nirdist;
+USE nirdist;
+source data.sql;
+```
+
+### Port 3000 already in use
+```bash
+# Find process using port 3000
+lsof -i :3000  # macOS/Linux
+netstat -ano | findstr :3000  # Windows
+
+# Kill process or use different port
+PORT=3001 npm run dev
+```
+
+---
+
+## Production Checklist
+
+- [ ] Change `JWT_SECRET` to strong random string
+- [ ] Move `.env` to `.gitignore`
+- [ ] Enable HTTPS/SSL
+- [ ] Add rate limiting
+- [ ] Setup database backups
+- [ ] Enable CORS restrictions (not `*`)
+- [ ] Add request validation
+- [ ] Setup logging and monitoring
+- [ ] Use environment variables for all secrets
+- [ ] Deploy with PM2 or Docker
+
+---
+
+## Next: Connect Flutter App
+
+Update `lib/services/api_service.dart`:
+```dart
+static const String baseUrl = 'http://YOUR_SERVER:3000/api';
+```
+
+Then run Flutter:
+```bash
+cd ../
+flutter run
+```
+
+---
+
+**Everything is ready!** Start your backend and connect your app. 🚀

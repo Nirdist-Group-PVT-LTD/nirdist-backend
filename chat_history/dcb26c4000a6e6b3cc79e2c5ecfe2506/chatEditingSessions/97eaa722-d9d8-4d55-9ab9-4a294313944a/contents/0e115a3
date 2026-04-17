@@ -1,0 +1,266 @@
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../models/models.dart';
+
+class ApiService {
+  static const String baseUrl = 'http://localhost:3000/api';
+  static String? _token;
+
+  static void setToken(String token) {
+    _token = token;
+  }
+
+  static Map<String, String> _headers({bool withAuth = true}) {
+    final headers = <String, String>{
+      'Content-Type': 'application/json',
+    };
+    if (withAuth && _token != null) {
+      headers['Authorization'] = 'Bearer $_token';
+    }
+    return headers;
+  }
+
+  // AUTH ENDPOINTS
+  static Future<Map<String, dynamic>> register(RegisterRequest request) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/auth/register'),
+      headers: _headers(withAuth: false),
+      body: jsonEncode({
+        'v_name': request.name,
+        'v_username': request.username,
+        'email': request.email,
+        'password': request.password,
+      }),
+    );
+    if (response.statusCode == 201) {
+      final data = jsonDecode(response.body);
+      setToken(data['token']);
+      return data;
+    }
+    throw Exception('Registration failed: ${response.body}');
+  }
+
+  static Future<Map<String, dynamic>> login(String email, String password) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/auth/login'),
+      headers: _headers(withAuth: false),
+      body: jsonEncode({
+        'v_username': email,
+        'password': password,
+      }),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      setToken(data['token']);
+      return data;
+    }
+    throw Exception('Login failed: ${response.body}');
+  }
+
+  // USER ENDPOINTS
+  static Future<User> getProfile(int userId) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/users/$userId'),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      return User.fromJson(data['data']);
+    }
+    throw Exception('Failed to fetch user profile');
+  }
+
+  static Future<List<dynamic>> searchUsers(String query) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/users/search?q=$query'),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      return data['data'] ?? [];
+    }
+    throw Exception('Search failed');
+  }
+
+  // POST ENDPOINTS
+  static Future<List<Post>> getFeed({String? algorithmId, int page = 1, int limit = 10}) async {
+    String url = '$baseUrl/posts/feed?page=$page&limit=$limit';
+    if (algorithmId != null) {
+      url += '&algorithmId=$algorithmId';
+    }
+    
+    final response = await http.get(
+      Uri.parse(url),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final List<dynamic> posts = data['data'] ?? [];
+      return posts.map((p) => Post.fromJson(p)).toList();
+    }
+    throw Exception('Failed to fetch feed');
+  }
+
+  static Future<Post> getPost(int postId) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/posts/$postId'),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      return Post.fromJson(data['data']);
+    }
+    throw Exception('Failed to fetch post');
+  }
+
+  static Future<Map<String, dynamic>> createPost(String description, {int? soundId}) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/posts'),
+      headers: _headers(),
+      body: jsonEncode({
+        'discription': description,
+        'sound_id': soundId,
+      }),
+    );
+    if (response.statusCode == 201) {
+      return jsonDecode(response.body);
+    }
+    throw Exception('Failed to create post');
+  }
+
+  static Future<void> deletePost(int postId) async {
+    final response = await http.delete(
+      Uri.parse('$baseUrl/posts/$postId'),
+      headers: _headers(),
+    );
+    if (response.statusCode != 200) {
+      throw Exception('Failed to delete post');
+    }
+  }
+
+  // REACTIONS
+  static Future<void> addReaction(int postId, String reactionType) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/reactions/$postId'),
+      headers: _headers(),
+      body: jsonEncode({'pr_type': reactionType}),
+    );
+    if (response.statusCode != 200) {
+      throw Exception('Failed to add reaction');
+    }
+  }
+
+  static Future<List<dynamic>> getReactions(int postId) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/reactions/$postId'),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      return data['data'] ?? [];
+    }
+    throw Exception('Failed to fetch reactions');
+  }
+
+  // COMMENTS
+  static Future<List<Comment>> getComments(int postId) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/comments/$postId'),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final List<dynamic> comments = data['data'] ?? [];
+      return comments.map((c) => Comment.fromJson(c)).toList();
+    }
+    throw Exception('Failed to fetch comments');
+  }
+
+  static Future<Comment> addComment(int postId, String text) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/comments/$postId'),
+      headers: _headers(),
+      body: jsonEncode({'post_comment_text': text}),
+    );
+    if (response.statusCode == 201) {
+      final data = jsonDecode(response.body);
+      return Comment.fromJson(data['data']);
+    }
+    throw Exception('Failed to add comment');
+  }
+
+  // STORIES
+  static Future<List<Story>> getStories({int page = 1, int limit = 20}) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/stories?page=$page&limit=$limit'),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final List<dynamic> stories = data['data'] ?? [];
+      return stories.map((s) => Story.fromJson(s)).toList();
+    }
+    throw Exception('Failed to fetch stories');
+  }
+
+  // NOTES
+  static Future<List<Note>> getNotes({int page = 1, int limit = 20}) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/notes?page=$page&limit=$limit'),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final List<dynamic> notes = data['data'] ?? [];
+      return notes.map((n) => Note.fromJson(n)).toList();
+    }
+    throw Exception('Failed to fetch notes');
+  }
+
+  // FOLLOWS
+  static Future<List<dynamic>> getFollowers(int userId, {int page = 1, int limit = 20}) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/follows/$userId/followers?page=$page&limit=$limit'),
+      headers: _headers(),
+    );
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      return data['data'] ?? [];
+    }
+    throw Exception('Failed to fetch followers');
+  }
+
+  static Future<void> followUser(int userId) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/follows/$userId/follow'),
+      headers: _headers(),
+    );
+    if (response.statusCode != 201) {
+      throw Exception('Failed to follow user');
+    }
+  }
+
+  static Future<void> unfollowUser(int userId) async {
+    final response = await http.delete(
+      Uri.parse('$baseUrl/follows/$userId/unfollow'),
+      headers: _headers(),
+    );
+    if (response.statusCode != 200) {
+      throw Exception('Failed to unfollow user');
+    }
+  }
+}
+
+class RegisterRequest {
+  final String name;
+  final String username;
+  final String email;
+  final String password;
+
+  RegisterRequest({
+    required this.name,
+    required this.username,
+    required this.email,
+    required this.password,
+  });
+}

@@ -1,0 +1,15 @@
+platform=1776214327923
+cluster.platform=1776214327923
+cluster.ide=1776214326317
+cluster.extide=1776214325107
+cluster.webcommon=1776214328362
+cluster.java=1776214327325
+cluster.extra=1776214325591
+cluster.nbcode=1776214327444
+user=1776387144841
+crc=214
+locale=en
+branding=nbcode
+java.version=17.0.12
+java.vm.version=17.0.12+8-LTS-286
+netbeans.home=c:\Users\Abhishek\.vscode\extensions\oracle.oracle-java-25.1.0\nbcode\platform

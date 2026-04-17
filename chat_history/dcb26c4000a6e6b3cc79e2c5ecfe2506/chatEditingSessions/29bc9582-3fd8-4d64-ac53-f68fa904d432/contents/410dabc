@@ -1,0 +1,313 @@
+import 'package:flutter/material.dart';
+
+class CreateScreen extends StatefulWidget {
+  const CreateScreen({Key? key}) : super(key: key);
+
+  @override
+  State<CreateScreen> createState() => _CreateScreenState();
+}
+
+class _CreateScreenState extends State<CreateScreen> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  int _selectedMode = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 4, vsync: this, initialIndex: 0);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Create'),
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          // Post Tab
+          CreatePostTab(),
+          // Story Tab
+          CreateStoryTab(),
+          // Sound Tab
+          CreateSoundTab(),
+          // Note Tab
+          CreateNoteTab(),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(top: BorderSide(color: Colors.grey.shade900)),
+        ),
+        child: TabBar(
+          controller: _tabController,
+          tabs: const [
+            Tab(text: 'Post'),
+            Tab(text: 'Story'),
+            Tab(text: 'Sound'),
+            Tab(text: 'Note'),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+}
+
+class CreatePostTab extends StatefulWidget {
+  @override
+  State<CreatePostTab> createState() => _CreatePostTabState();
+}
+
+class _CreatePostTabState extends State<CreatePostTab> {
+  final TextEditingController _descriptionController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: () {
+              // Open image picker
+            },
+            child: Container(
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.add_photo_alternate, size: 48, color: Colors.grey),
+                  const SizedBox(height: 8),
+                  const Text('Tap to add photos/videos'),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            controller: _descriptionController,
+            maxLines: 5,
+            decoration: InputDecoration(
+              hintText: 'Write a description...',
+              filled: true,
+              fillColor: Colors.grey.shade900,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              // Create post
+            },
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size(double.infinity, 50),
+              backgroundColor: Colors.red,
+            ),
+            child: const Text('Post'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _descriptionController.dispose();
+    super.dispose();
+  }
+}
+
+class CreateStoryTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(Icons.camera_alt, size: 48, color: Colors.grey),
+          const SizedBox(height: 16),
+          const Text('Create a 24-hour story'),
+          const SizedBox(height: 24),
+          ElevatedButton.icon(
+            onPressed: () {},
+            icon: const Icon(Icons.camera),
+            label: const Text('Take Photo'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CreateSoundTab extends StatefulWidget {
+  @override
+  State<CreateSoundTab> createState() => _CreateSoundTabState();
+}
+
+class _CreateSoundTabState extends State<CreateSoundTab> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _descController = TextEditingController();
+  bool _isRecording = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          Container(
+            height: 100,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    _isRecording ? Icons.mic : Icons.mic_none,
+                    size: 48,
+                    color: Colors.red,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(_isRecording ? 'Recording...' : 'Ready to record'),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            controller: _nameController,
+            decoration: InputDecoration(
+              hintText: 'Sound name',
+              filled: true,
+              fillColor: Colors.grey.shade900,
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+            ),
+          ),
+          const SizedBox(height: 12),
+          TextField(
+            controller: _descController,
+            maxLines: 3,
+            decoration: InputDecoration(
+              hintText: 'Description',
+              filled: true,
+              fillColor: Colors.grey.shade900,
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              Expanded(
+                child: ElevatedButton.icon(
+                  onPressed: () => setState(() => _isRecording = !_isRecording),
+                  icon: Icon(_isRecording ? Icons.stop : Icons.mic),
+                  label: Text(_isRecording ? 'Stop' : 'Record'),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  child: const Text('Upload'),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _descController.dispose();
+    super.dispose();
+  }
+}
+
+class CreateNoteTab extends StatefulWidget {
+  @override
+  State<CreateNoteTab> createState() => _CreateNoteTabState();
+}
+
+class _CreateNoteTabState extends State<CreateNoteTab> {
+  final TextEditingController _noteController = TextEditingController();
+  String _visibility = 'public';
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          TextField(
+            controller: _noteController,
+            maxLines: 8,
+            decoration: InputDecoration(
+              hintText: 'What\'s on your mind?',
+              filled: true,
+              fillColor: Colors.grey.shade900,
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+            ),
+          ),
+          const SizedBox(height: 20),
+          DropdownButtonFormField<String>(
+            value: _visibility,
+            onChanged: (value) => setState(() => _visibility = value ?? 'public'),
+            decoration: InputDecoration(
+              labelText: 'Visibility',
+              filled: true,
+              fillColor: Colors.grey.shade900,
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+            ),
+            items: const [
+              DropdownMenuItem(value: 'public', child: Text('Public')),
+              DropdownMenuItem(value: 'friends', child: Text('Friends')),
+              DropdownMenuItem(value: 'only_me', child: Text('Only Me')),
+            ],
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size(double.infinity, 50),
+              backgroundColor: Colors.red,
+            ),
+            child: const Text('Post Note'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _noteController.dispose();
+    super.dispose();
+  }
+}

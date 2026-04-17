@@ -1,0 +1,273 @@
+Note: The tool simplified the command to `flutter build apk 2>&1`, and that command is now running in terminal with ID=02270346-3133-4737-b8d8-db7400c53d31
+ The command is still running, with output:
+
+
+[... PREVIOUS OUTPUT TRUNCATED ...]
+
+java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown
+Source)
+        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(
+Unknown Source)
+        at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown
+Source)
+        ... 3 more
+Caused by: java.lang.Exception: Could not close incremental caches in D:\Projec 
+t\2026\2\nirdist\build\video_player_android\kotlin\compileReleaseKotlin\cacheab 
+le\caches-jvm\jvm\kotlin: class-fq-name-to-source.tab, source-to-classes.tab,   
+internal-name-to-source.tab
+        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(Basi
+cMapsOwner.kt:95)
+        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwne
+r.kt:53)
+        at org.jetbrains.kotlin.com.google.common.io.Closer.close(Closer.java:205)
+        ... 22 more
+        Suppressed: java.lang.IllegalArgumentException: this and base files have
+
+different roots: C:\Users\Abhishek\AppData\Local\Pub\Cache\hosted\pub.dev\video 
+_player_android-2.9.5\android\src\main\kotlin\io\flutter\plugins\videoplayer\Me 
+ssages.kt and D:\Project\2026\2\nirdist\android.
+                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)    
+                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
+                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.to
+Path(RelocatableFileToPathConverter.kt:24)
+                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathCon
+verter.kt:33)
+                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathCon
+verter.kt:30)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(Persiste
+ntMapImpl.java:447)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(Persistent
+MapImpl.java:426)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(Persistent
+HashMap.java:106)
+                at 
+org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)     
+                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMe
+moryStorage.kt:108)
+                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemorySto
+rage.kt:136)
+                at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(Pe
+rsistentStorage.kt:124)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Bas
+icMapsOwner.kt:53)
+/               at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Bas
+icMapsOwner.kt:53)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(Bas
+icMapsOwner.kt:87)
+                ... 24 more
+        Suppressed: java.lang.IllegalArgumentException: this and base files have
+
+different roots: C:\Users\Abhishek\AppData\Local\Pub\Cache\hosted\pub.dev\video 
+_player_android-2.9.5\android\src\main\kotlin\io\flutter\plugins\videoplayer\Me 
+ssages.kt and D:\Project\2026\2\nirdist\android.
+                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)    
+                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
+                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.to
+Path(RelocatableFileToPathConverter.kt:24)
+                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileTo
+PathConverter.kt:50)
+                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileTo
+PathConverter.kt:30)
+                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hash
+Key(LinkedCustomHashMap.java:109)
+                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remo
+ve(LinkedCustomHashMap.java:153)
+                at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.j
+ava:89)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCac
+he(PersistentMapImpl.java:1007)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(Persiste
+ntMapImpl.java:455)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(Persistent
+MapImpl.java:426)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(Persistent
+HashMap.java:106)
+                at 
+org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)     
+                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMe
+moryStorage.kt:108)
+                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyCh
+anges(InMemoryStorage.kt:179)
+                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemorySto
+rage.kt:136)
+                at org.jetbrains.kotlin.incremental.storage.AppendableSetBasicMap.close(Basic
+Map.kt:157)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Bas
+icMapsOwner.kt:53)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Bas
+icMapsOwner.kt:53)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(Bas
+icMapsOwner.kt:87)
+                ... 24 more
+        Suppressed: java.lang.IllegalArgumentException: this and base files have
+
+different roots: C:\Users\Abhishek\AppData\Local\Pub\Cache\hosted\pub.dev\video 
+_player_android-2.9.5\android\src\main\kotlin\io\flutter\plugins\videoplayer\Me 
+ssages.kt and D:\Project\2026\2\nirdist\android.
+                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)    
+                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
+                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.to
+Path(RelocatableFileToPathConverter.kt:24)
+                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathCon
+verter.kt:33)
+-               at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathCon
+verter.kt:30)
+                at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.
+save(LazyStorage.kt:151)
+                at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.
+save(LazyStorage.kt:142)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(Persiste
+ntMapImpl.java:447)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(Persistent
+MapImpl.java:426)
+                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(Persistent
+HashMap.java:106)
+                at
+org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)     
+                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMe
+moryStorage.kt:108)
+                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyCh
+anges(InMemoryStorage.kt:179)
+                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemorySto
+rage.kt:136)
+                at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(Pe
+rsistentStorage.kt:124)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Bas
+icMapsOwner.kt:53)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Bas
+icMapsOwner.kt:53)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(Bas
+icMapsOwner.kt:87)
+                ... 24 more
+        Suppressed: java.lang.Exception: Could not close incremental caches in D:\Proj
+ect\2026\2\nirdist\build\video_player_android\kotlin\compileReleaseKotlin\cache 
+able\caches-jvm\lookups: id-to-file.tab, file-to-id.tab
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(Bas
+icMapsOwner.kt:95)
+                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwn
+er.kt:53)
+                at org.jetbrains.kotlin.incremental.LookupStorage.close(LookupStorage.kt:155)
+                ... 23 more
+                Suppressed: java.lang.IllegalArgumentException: this and base files have
+different roots: C:\Users\Abhishek\AppData\Local\Pub\Cache\hosted\pub.dev\video 
+_player_android-2.9.5\android\src\main\kotlin\io\flutter\plugins\videoplayer\Me 
+ssages.kt and D:\Project\2026\2\nirdist\android.
+                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
+                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)  
+\                       at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.t
+oPath(RelocatableFileToPathConverter.kt:24)
+                        at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdTo
+FileMap.kt:51)
+                        at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdTo
+FileMap.kt:48)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(Persist
+entMapImpl.java:447)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(Persisten
+tMapImpl.java:426)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(Persisten
+tHashMap.java:106)
+                        at
+org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)     
+                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InM
+emoryStorage.kt:108)
+                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemorySt
+orage.kt:136)
+                        at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(P
+ersistentStorage.kt:124)
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Ba
+sicMapsOwner.kt:53)
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Ba
+sicMapsOwner.kt:53)
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(Ba
+sicMapsOwner.kt:87)
+                        ... 25 more
+                Suppressed: java.lang.IllegalArgumentException: this and base files have
+different roots: C:\Users\Abhishek\AppData\Local\Pub\Cache\hosted\pub.dev\video 
+_player_android-2.9.5\android\src\main\kotlin\io\flutter\plugins\videoplayer\Me 
+ssages.kt and D:\Project\2026\2\nirdist\android.
+                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
+                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)  
+                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.t
+oPath(RelocatableFileToPathConverter.kt:24)
+                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileT
+oPathConverter.kt:50)
+                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileT
+oPathConverter.kt:30)
+                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.has
+hKey(LinkedCustomHashMap.java:109)
+                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.rem
+ove(LinkedCustomHashMap.java:153)
+                        at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.
+java:89)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCa
+che(PersistentMapImpl.java:1007)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(Persist
+entMapImpl.java:455)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(Persisten
+tMapImpl.java:426)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(Persisten
+tHashMap.java:106)
+                        at
+org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)     
+                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InM
+emoryStorage.kt:108)
+|                       at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemorySt
+orage.kt:136)
+                        at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(P
+ersistentStorage.kt:124)
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Ba
+sicMapsOwner.kt:53)
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Ba
+sicMapsOwner.kt:53)
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(Ba
+sicMapsOwner.kt:87)
+                        ... 25 more
+        Suppressed: java.lang.Exception: Could not close incremental caches in D:\Proj
+ect\2026\2\nirdist\build\video_player_android\kotlin\compileReleaseKotlin\cache 
+able\caches-jvm\inputs: source-to-output.tab
+                ... 25 more
+                Suppressed: java.lang.IllegalArgumentException: this and base files have
+different roots: C:\Users\Abhishek\AppData\Local\Pub\Cache\hosted\pub.dev\video 
+_player_android-2.9.5\android\src\main\kotlin\io\flutter\plugins\videoplayer\Me 
+ssages.kt and D:\Project\2026\2\nirdist\android.
+                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
+                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)  
+                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.t
+oPath(RelocatableFileToPathConverter.kt:24)
+                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileT
+oPathConverter.kt:50)
+                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileT
+oPathConverter.kt:30)
+                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.has
+hKey(LinkedCustomHashMap.java:109)
+                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.rem
+ove(LinkedCustomHashMap.java:153)
+                        at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.
+java:89)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCa
+che(PersistentMapImpl.java:1007)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(Persist
+entMapImpl.java:455)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(Persisten
+tMapImpl.java:426)
+                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(Persisten
+tHashMap.java:106)
+                        at
+org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)     
+                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InM
+emoryStorage.kt:108)
+                        at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyC
+hanges(InMemoryStorage.kt:179)
+                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemorySt
+orage.kt:136)
+                        at org.jetbrains.kotlin.incremental.storage.AppendableSetBasicMap.close(Basi
+cMap.kt:157)
+/                       at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Ba
+sicMapsOwner.kt:53)
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(Ba
+sicMapsOwner.kt:53)
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(Ba
+sicMapsOwner.kt:87)
+                        ... 24 more
+\

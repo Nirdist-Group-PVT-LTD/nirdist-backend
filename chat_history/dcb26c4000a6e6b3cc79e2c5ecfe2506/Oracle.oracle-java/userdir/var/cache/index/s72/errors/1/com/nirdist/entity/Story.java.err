@@ -1,0 +1,23 @@
+ERROR:4,8-4,33:package lombok does not exist
+ERROR:5,8-5,19:package lombok does not exist
+ERROR:6,8-6,32:package lombok does not exist
+ERROR:9,2-9,8:cannot find symbol\n  symbol\d class Entity
+ERROR:10,2-10,7:cannot find symbol\n  symbol\d class Table
+ERROR:11,2-11,6:cannot find symbol\n  symbol\d class Data
+ERROR:12,2-12,19:cannot find symbol\n  symbol\d class NoArgsConstructor
+ERROR:13,2-13,20:cannot find symbol\n  symbol\d class AllArgsConstructor
+ERROR:3,8-3,27:package jakarta.persistence does not exist
+ERROR:15,6-15,8:cannot find symbol\n  symbol\d   class Id\n  location\d class com.nirdist.entity.Story
+ERROR:16,6-16,20:cannot find symbol\n  symbol\d   class GeneratedValue\n  location\d class com.nirdist.entity.Story
+ERROR:16,32-16,46:cannot find symbol\n  symbol\d   variable GenerationType\n  location\d class com.nirdist.entity.Story
+ERROR:17,6-17,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:20,6-20,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:23,6-23,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:26,6-26,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:29,6-29,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:32,6-32,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:35,6-35,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:38,6-38,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:41,6-41,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:44,6-44,12:cannot find symbol\n  symbol\d   class Column\n  location\d class com.nirdist.entity.Story
+ERROR:47,6-47,16:cannot find symbol\n  symbol\d   class PrePersist\n  location\d class com.nirdist.entity.Story

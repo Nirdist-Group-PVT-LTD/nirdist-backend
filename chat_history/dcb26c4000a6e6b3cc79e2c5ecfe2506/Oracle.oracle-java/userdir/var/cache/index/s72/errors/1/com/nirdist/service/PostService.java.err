@@ -1,0 +1,10 @@
+ERROR:5,8-5,62:package org.springframework.beans.factory.annotation does not exist
+ERROR:6,8-6,44:package org.springframework.data.domain does not exist
+ERROR:7,8-7,48:package org.springframework.data.domain does not exist
+ERROR:8,8-8,46:package org.springframework.stereotype does not exist
+ERROR:13,2-13,9:cannot find symbol\n  symbol\d class Service
+ERROR:31,31-31,39:cannot find symbol\n  symbol\d   class Pageable\n  location\d class com.nirdist.service.PostService
+ERROR:31,12-31,16:cannot find symbol\n  symbol\d   class Page\n  location\d class com.nirdist.service.PostService
+ERROR:15,6-15,15:cannot find symbol\n  symbol\d   class Autowired\n  location\d class com.nirdist.service.PostService
+ERROR:19,16-19,35:cannot find symbol\n  symbol\d   method save(com.nirdist.entity.Post)\n  location\d variable postRepository of type com.nirdist.repository.PostRepository
+ERROR:36,9-36,34:cannot find symbol\n  symbol\d   method deleteById(java.lang.Integer)\n  location\d variable postRepository of type com.nirdist.repository.PostRepository

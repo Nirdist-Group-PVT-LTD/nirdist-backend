@@ -1,0 +1,113 @@
+{
+  message: "Use the JDK from '' as the initial default project JDK.",
+  level: 'info',
+  timestamp: '2026-04-17 06:38:04.224'
+}
+{
+  message: 'Starting Java server with: c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\jre\\21.0.10-win32-x86_64\\bin\\java --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\lombok\\lombok-1.18.39-4050.jar -jar c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\server\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.54.0\\config_ss_win -data c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java\\ss_ws',
+  level: 'info',
+  timestamp: '2026-04-17 06:38:04.536'
+}
+{
+  message: 'Starting Java server with: c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\jre\\21.0.10-win32-x86_64\\bin\\java --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\lombok\\lombok-1.18.39-4050.jar -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java -Daether.dependencyCollector.impl=bf -jar c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.54.0-win32-x64\\server\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.54.0\\config_win -data c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java\\jdt_ws',
+  level: 'info',
+  timestamp: '2026-04-17 06:38:04.806'
+}
+{
+  message: 'Apr 17, 2026 6:38:06 AM org.apache.aries.spifly.BaseActivator log\r\n' +
+    'INFO: Registered provider ch.qos.logback.classic.spi.LogbackServiceProvider of service org.slf4j.spi.SLF4JServiceProvider in bundle ch.qos.logback.classic\r\n',
+  level: 'info',
+  timestamp: '2026-04-17 06:38:06.325'
+}
+{
+  message: '[Warn  - 6:39:47 AM] Apr 17, 2026, 6:39:47 AM Synchronize project android failed due to an error connecting to the Gradle build.\n' +
+    'org.gradle.tooling.BuildActionFailureException: The supplied phased action failed with an exception.\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.connection.PhasedActionAwareConsumerConnection.run(PhasedActionAwareConsumerConnection.java:58)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.connection.ParameterValidatingConsumerConnection.run(ParameterValidatingConsumerConnection.java:62)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.DefaultPhasedBuildActionExecuter$1.run(DefaultPhasedBuildActionExecuter.java:83)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.DefaultPhasedBuildActionExecuter$1.run(DefaultPhasedBuildActionExecuter.java:75)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.connection.LazyConsumerActionExecutor.run(LazyConsumerActionExecutor.java:143)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.connection.CancellableConsumerActionExecutor.run(CancellableConsumerActionExecutor.java:45)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.connection.ProgressLoggingConsumerActionExecutor.run(ProgressLoggingConsumerActionExecutor.java:61)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.connection.RethrowingErrorsConsumerActionExecutor.run(RethrowingErrorsConsumerActionExecutor.java:38)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.async.DefaultAsyncConsumerActionExecutor$1$1.run(DefaultAsyncConsumerActionExecutor.java:66)\r\n' +
+    '\tat org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)\r\n' +
+    '\tat org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)\r\n' +
+    '\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\r\n' +
+    '\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\r\n' +
+    '\tat java.base/java.lang.Thread.run(Unknown Source)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.BlockingResultHandler.getResult(BlockingResultHandler.java:46)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.DefaultPhasedBuildActionExecuter.run(DefaultPhasedBuildActionExecuter.java:68)\r\n' +
+    '\tat org.gradle.tooling.internal.consumer.DefaultPhasedBuildActionExecuter.run(DefaultPhasedBuildActionExecuter.java:31)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.workspace.EclipseModelUtils.runPhasedModelQuery(EclipseModelUtils.java:111)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.workspace.EclipseModelUtils.runTasksAndQueryCompositeModelWithRuntimInfo(EclipseModelUtils.java:86)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.workspace.EclipseModelUtils.runTasksAndQueryModels(EclipseModelUtils.java:60)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.workspace.DefaultModelProvider.lambda$fetchEclipseProjectAndRunSyncTasks$4(DefaultModelProvider.java:75)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.DefaultGradleBuild$GradleConnectionOperation.runInToolingApi(DefaultGradleBuild.java:337)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager$WorkspaceRunnableAdapter.run(DefaultToolingApiOperationManager.java:58)\r\n' +
+    '\tat org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)\r\n' +
+    '\tat org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager.run(DefaultToolingApiOperationManager.java:39)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.DefaultGradleBuild.withConnection(DefaultGradleBuild.java:127)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.workspace.DefaultModelProvider.lambda$fetchEclipseProjectAndRunSyncTasks$5(DefaultModelProvider.java:75)\r\n' +
+    '\tat com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4859)\r\n' +
+    '\tat com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3556)\r\n' +
+    '\tat com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2307)\r\n' +
+    '\tat com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2180)\r\n' +
+    '\tat com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2071)\r\n' +
+    '\tat com.google.common.cache.LocalCache.get(LocalCache.java:3985)\r\n' +
+    '\tat com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4854)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.workspace.DefaultModelProvider.getFromCache(DefaultModelProvider.java:98)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.workspace.DefaultModelProvider.executeOperation(DefaultModelProvider.java:90)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.workspace.DefaultModelProvider.fetchEclipseProjectAndRunSyncTasks(DefaultModelProvider.java:72)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.DefaultGradleBuild$SynchronizeOperation.runInToolingApi(DefaultGradleBuild.java:234)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager$WorkspaceRunnableAdapter.run(DefaultToolingApiOperationManager.java:58)\r\n' +
+    '\tat org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2505)\r\n' +
+    '\tat org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2533)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.operation.DefaultToolingApiOperationManager.run(DefaultToolingApiOperationManager.java:39)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.DefaultGradleBuild$SynchronizeOperation.run(DefaultGradleBuild.java:197)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.DefaultGradleBuild.synchronize(DefaultGradleBuild.java:105)\r\n' +
+    '\tat org.eclipse.buildship.core.internal.DefaultGradleBuild.synchronize(DefaultGradleBuild.java:86)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.managers.GradleProjectImporter.startSynchronization(GradleProjectImporter.java:491)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.managers.GradleProjectImporter.importDir(GradleProjectImporter.java:367)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.managers.GradleProjectImporter.importToWorkspace(GradleProjectImporter.java:240)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.importProjects(ProjectsManager.java:169)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.initializeProjects(ProjectsManager.java:126)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.InitHandler$1.runInWorkspace(InitHandler.java:264)\r\n' +
+    '\tat org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)\r\n' +
+    '\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)\r\n' +
+    "Caused by: org.gradle.api.internal.tasks.DefaultTaskContainer$TaskCreationException: Could not create task ':flutter_plugin_android_lifecycle:compileDebugUnitTestSources'.\r\n" +
+    '\tat org.gradle.api.internal.tasks.DefaultTaskContainer.taskCreationException(DefaultTaskContainer.java:729)\r\n' +
+    '\tat org.gradle.api.internal.tasks.DefaultTaskContainer.access$600(DefaultTaskContainer.java:78)\r\n' +
+    '\tat org.gradle.api.internal.tasks.DefaultTaskContainer$TaskCreatingProvider.domainObjectCreationException(DefaultTaskContainer.java:721)\r\n' +
+    '\tat org.gradle.api.internal.DefaultNamedDomainObjectCollection$AbstractDomainObjectCreatingProvider.tryCreate(DefaultNamedDomainObjectCollection.java:1014)\r\n' +
+    '\tat org.gradle.api.internal.tasks.DefaultTaskContainer$TaskCreatingProvider.access$1401(DefaultTaskContainer.java:668)\r\n' +
+    '\tat org.gradle.api.internal.tasks.DefaultTaskContainer$TaskCreatingProvider$1.run(DefaultTaskContainer.java:694)\r\n' +
+    '\tat org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)\r\n' +
+    '\tat org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)\r\n' +
+    '\tat org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)\r\n' +
+    '\tat org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)\r\n' +
+    '\tat org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)\r\n' +
+    '\tat org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)\r\n' +
+    '\tat org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)\r\n' +
+    '\tat org.gradle.api.internal.tasks.DefaultTaskContainer$TaskCreatingProvider.tryCreate(DefaultTaskContainer.java:690)\r\n' +
+    '\tat org.gradle.api.internal.DefaultNamedDomainObjectCollection$AbstractDomainObjectCreatingProvider.calculateOwnValue(DefaultNamedDomainObjectCollection.java:988)\r\n' +
+    '\tat org.gradle.api.internal.provider.AbstractMinimalProvider.getOrNull(AbstractMinimalProvider.java:107)\r\n' +
+    '\tat org.gradle.api.internal.DefaultNamedDomainObjectCollection.findByName(DefaultNamedDomainObjectCollection.java:321)\r\n' +
+    '\tat org.gradle.api.internal.tasks.DefaultTaskContainer.findByName(DefaultTaskContainer.java:572)\r\n' +
+    '\tat org.gradle.api.internal.tasks.DefaultTaskContainer.findByName(DefaultTaskContainer.java:77)\r\n' +
+    '\tat org.gradle.plugins.ide.internal.tooling.GradleProjectBuilder.collectTasks(GradleProjectBuilder.java:96)\r\n' +
+    '\tat org.gradle.plugins.ide.internal.tooling.GradleProjectBuilder.buildHierarchy(GradleProjectBuilder.java:81)\r\n' +
+    '\tat org.gradle.plugins.ide.internal.tooling.GradleProjectBuilder.lambda$buildHierarchy$0(GradleProjectBuilder.java:61)\r\n' +
+    '\tat org.gradle.plugins.ide.internal.tooling.GradleProjectBuilder.buildHierarchy(GradleProjectBuilder.java:62)\r\n' +
+    '\tat org.gradle.plugins.ide.internal.tooling.GradleProjectBuilder.buildForRoot(GradleProjectBuilder.java:53)\r\n' +
+    '\tat org.gradle.plugins.ide.internal.tooling.EclipseModelBuilder.buildAll(EclipseModelBuilder.java:152)\r\n' +
+    '\tat org.gradle.plugins.ide.internal.tooling.EclipseModelBuilder.buildAll(EclipseModelBuilder.java:131)\r\n' +
+    '\tat org.gradle.plugins.ide.internal.tooling.EclipseModelBuilder.buildAll(EclipseModelBuilder.java:90)\r\n' +
+    '\tat org.gradle.tooling.provider.model.internal.DefaultToolingModelBuilderRegistry$BuilderWithParameter.build(DefaultToolingModelBuilderRegistry.java:293)\r\n' +
+    '\tat org.gradle.tooling.provider.model.internal.DefaultToolingModelBuilderRegistry$LockSingleProjectBuilder.lambda$build$0(DefaultToolingModelBuilderRegistry.java:308)\r\n' +
+    '\tat org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$fromMutableState$2(DefaultProjectStateRegistry.java:458)\r\n' +
+    '\tat org.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerLease'... 16401 more characters,
+  level: 'info',
+  timestamp: '2026-04-17 06:39:47.070'
+}

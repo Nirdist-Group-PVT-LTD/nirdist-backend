@@ -1,0 +1,304 @@
+{
+  message: "Use the JDK from '' as the initial default project JDK.",
+  level: 'info',
+  timestamp: '2026-04-15 07:35:45.787'
+}
+{
+  message: 'Starting Java server with: c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\jre\\21.0.10-win32-x86_64\\bin\\java --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\lombok\\lombok-1.18.39-4050.jar -jar c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\server\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.53.0\\config_ss_win -data c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java\\ss_ws',
+  level: 'info',
+  timestamp: '2026-04-15 07:35:45.904'
+}
+{
+  message: 'Starting Java server with: c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\jre\\21.0.10-win32-x86_64\\bin\\java --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\lombok\\lombok-1.18.39-4050.jar -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java -Daether.dependencyCollector.impl=bf -jar c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\server\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.53.0\\config_win -data c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java\\jdt_ws',
+  level: 'info',
+  timestamp: '2026-04-15 07:35:45.970'
+}
+{
+  message: 'Apr 15, 2026 7:35:47 AM org.apache.aries.spifly.BaseActivator log\r\n' +
+    'INFO: Registered provider ch.qos.logback.classic.spi.LogbackServiceProvider of service org.slf4j.spi.SLF4JServiceProvider in bundle ch.qos.logback.classic\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 07:35:47.244'
+}
+{
+  message: 'Apr 15, 2026 7:47:27 AM org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor run\r\n' +
+    'SEVERE: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe has been ended\r\n' +
+    'org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe has been ended\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:125)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)\r\n' +
+    '\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)\r\n' +
+    '\tat java.base/java.util.concurrent.FutureTask.run(Unknown Source)\r\n' +
+    '\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\r\n' +
+    '\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\r\n' +
+    '\tat java.base/java.lang.Thread.run(Unknown Source)\r\n' +
+    'Caused by: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe has been ended\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeInputStream.read(ConnectionStreamFactory.java:181)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:82)\r\n' +
+    '\t... 6 more\r\n' +
+    'Caused by: java.util.concurrent.ExecutionException: java.io.IOException: The pipe has been ended\r\n' +
+    '\tat java.base/sun.nio.ch.PendingFuture.get(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeInputStream.read(ConnectionStreamFactory.java:171)\r\n' +
+    '\t... 7 more\r\n' +
+    'Caused by: java.io.IOException: The pipe has been ended\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.readFile(Native Method)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl$ReadTask.run(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.implRead(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.AsynchronousFileChannelImpl.read(Unknown Source)\r\n' +
+    '\t... 8 more\r\n' +
+    '\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 07:47:28.004'
+}
+{
+  message: 'Apr 15, 2026 7:47:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify\r\n' +
+    'WARNING: Failed to send notification message.\r\n' +
+    'org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ParentProcessWatcher.lambda$1(ParentProcessWatcher.java:86)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:135)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:88)\r\n' +
+    '\tat jdk.proxy4/jdk.proxy4.$Proxy12.notifyProgress(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendStatus(ProgressReporterManager.java:269)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendProgress(ProgressReporterManager.java:239)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.beginTask(ProgressReporterManager.java:200)\r\n' +
+    '\tat org.eclipse.core.runtime.SubMonitor.convert(SubMonitor.java:556)\r\n' +
+    '\tat org.eclipse.core.runtime.SubMonitor.convert(SubMonitor.java:512)\r\n' +
+    '\tat org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:298)\r\n' +
+    '\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)\r\n' +
+    'Caused by: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:235)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)\r\n' +
+    '\t... 11 more\r\n' +
+    'Caused by: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.PendingFuture.get(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:233)\r\n' +
+    '\t... 12 more\r\n' +
+    'Caused by: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.writeFile(Native Method)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl$WriteTask.run(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.implWrite(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.AsynchronousFileChannelImpl.write(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:231)\r\n' +
+    '\t... 12 more\r\n' +
+    '\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 07:47:28.090'
+}
+{
+  message: 'Apr 15, 2026 7:47:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify\r\n' +
+    'WARNING: Failed to send notification message.\r\n' +
+    'org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ParentProcessWatcher.lambda$1(ParentProcessWatcher.java:86)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:135)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:88)\r\n' +
+    '\tat jdk.proxy4/jdk.proxy4.$Proxy12.notifyProgress(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendStatus(ProgressReporterManager.java:290)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendProgress(ProgressReporterManager.java:239)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.beginTask(ProgressReporterManager.java:200)\r\n' +
+    '\tat org.eclipse.core.runtime.SubMonitor.convert(SubMonitor.java:556)\r\n' +
+    '\tat org.eclipse.core.runtime.SubMonitor.convert(SubMonitor.java:512)\r\n' +
+    '\tat org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:298)\r\n' +
+    '\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)\r\n' +
+    'Caused by: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:235)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)\r\n' +
+    '\t... 11 more\r\n' +
+    'Caused by: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.PendingFuture.get(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:233)\r\n' +
+    '\t... 12 more\r\n' +
+    'Caused by: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.writeFile(Native Method)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl$WriteTask.run(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.implWrite(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.AsynchronousFileChannelImpl.write(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:231)\r\n' +
+    '\t... 12 more\r\n' +
+    '\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 07:47:28.091'
+}
+{
+  message: 'Apr 15, 2026 7:47:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify\r\n' +
+    'WARNING: Failed to send notification message.\r\n' +
+    'org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ParentProcessWatcher.lambda$1(ParentProcessWatcher.java:86)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:135)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:88)\r\n' +
+    '\tat jdk.proxy4/jdk.proxy4.$Proxy12.notifyProgress(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendStatus(ProgressReporterManager.java:290)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendProgress(ProgressReporterManager.java:239)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.done(ProgressReporterManager.java:222)\r\n' +
+    '\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:74)\r\n' +
+    'Caused by: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:235)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)\r\n' +
+    '\t... 8 more\r\n' +
+    'Caused by: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.PendingFuture.get(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:233)\r\n' +
+    '\t... 9 more\r\n' +
+    'Caused by: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.writeFile(Native Method)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl$WriteTask.run(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.implWrite(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.AsynchronousFileChannelImpl.write(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:231)\r\n' +
+    '\t... 9 more\r\n' +
+    '\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 07:47:28.093'
+}
+{
+  message: "Use the JDK from '' as the initial default project JDK.",
+  level: 'info',
+  timestamp: '2026-04-15 07:47:39.413'
+}
+{
+  message: 'Starting Java server with: c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\jre\\21.0.10-win32-x86_64\\bin\\java --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\lombok\\lombok-1.18.39-4050.jar -jar c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\server\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.53.0\\config_ss_win -data c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java\\ss_ws',
+  level: 'info',
+  timestamp: '2026-04-15 07:47:39.493'
+}
+{
+  message: 'Starting Java server with: c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\jre\\21.0.10-win32-x86_64\\bin\\java --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\lombok\\lombok-1.18.39-4050.jar -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java -Daether.dependencyCollector.impl=bf -jar c:\\Users\\Abhishek\\.vscode\\extensions\\redhat.java-1.53.0-win32-x64\\server\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\globalStorage\\redhat.java\\1.53.0\\config_win -data c:\\Users\\Abhishek\\AppData\\Roaming\\Code\\User\\workspaceStorage\\ad9f441a6447e82020d82e38e7b719bf\\redhat.java\\jdt_ws',
+  level: 'info',
+  timestamp: '2026-04-15 07:47:39.549'
+}
+{
+  message: 'Apr 15, 2026 7:47:40 AM org.apache.aries.spifly.BaseActivator log\r\n' +
+    'INFO: Registered provider ch.qos.logback.classic.spi.LogbackServiceProvider of service org.slf4j.spi.SLF4JServiceProvider in bundle ch.qos.logback.classic\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 07:47:40.717'
+}
+{
+  message: 'Apr 15, 2026 8:23:27 AM org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor run\r\n' +
+    'SEVERE: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe has been ended\r\n' +
+    'org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe has been ended\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:125)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)\r\n' +
+    '\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)\r\n' +
+    '\tat java.base/java.util.concurrent.FutureTask.run(Unknown Source)\r\n' +
+    '\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\r\n' +
+    '\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\r\n' +
+    '\tat java.base/java.lang.Thread.run(Unknown Source)\r\n' +
+    'Caused by: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe has been ended\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeInputStream.read(ConnectionStreamFactory.java:181)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:82)\r\n' +
+    '\t... 6 more\r\n' +
+    'Caused by: java.util.concurrent.ExecutionException: java.io.IOException: The pipe has been ended\r\n' +
+    '\tat java.base/sun.nio.ch.PendingFuture.get(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeInputStream.read(ConnectionStreamFactory.java:171)\r\n' +
+    '\t... 7 more\r\n' +
+    'Caused by: java.io.IOException: The pipe has been ended\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.readFile(Native Method)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl$ReadTask.run(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.implRead(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.AsynchronousFileChannelImpl.read(Unknown Source)\r\n' +
+    '\t... 8 more\r\n' +
+    '\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 08:23:27.738'
+}
+{
+  message: 'Apr 15, 2026 8:23:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify\r\n' +
+    'WARNING: Failed to send notification message.\r\n' +
+    'org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ParentProcessWatcher.lambda$1(ParentProcessWatcher.java:86)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:135)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:88)\r\n' +
+    '\tat jdk.proxy4/jdk.proxy4.$Proxy12.notifyProgress(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendStatus(ProgressReporterManager.java:269)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendProgress(ProgressReporterManager.java:239)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.beginTask(ProgressReporterManager.java:200)\r\n' +
+    '\tat org.eclipse.core.runtime.SubMonitor.convert(SubMonitor.java:556)\r\n' +
+    '\tat org.eclipse.core.runtime.SubMonitor.convert(SubMonitor.java:512)\r\n' +
+    '\tat org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:298)\r\n' +
+    '\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)\r\n' +
+    'Caused by: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:235)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)\r\n' +
+    '\t... 11 more\r\n' +
+    'Caused by: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.PendingFuture.get(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:233)\r\n' +
+    '\t... 12 more\r\n' +
+    'Caused by: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.writeFile(Native Method)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl$WriteTask.run(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.implWrite(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.AsynchronousFileChannelImpl.write(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:231)\r\n' +
+    '\t... 12 more\r\n' +
+    '\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 08:23:27.829'
+}
+{
+  message: 'Apr 15, 2026 8:23:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify\r\n' +
+    'WARNING: Failed to send notification message.\r\n' +
+    'org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ParentProcessWatcher.lambda$1(ParentProcessWatcher.java:86)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:135)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:88)\r\n' +
+    '\tat jdk.proxy4/jdk.proxy4.$Proxy12.notifyProgress(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendStatus(ProgressReporterManager.java:290)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendProgress(ProgressReporterManager.java:239)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.beginTask(ProgressReporterManager.java:200)\r\n' +
+    '\tat org.eclipse.core.runtime.SubMonitor.convert(SubMonitor.java:556)\r\n' +
+    '\tat org.eclipse.core.runtime.SubMonitor.convert(SubMonitor.java:512)\r\n' +
+    '\tat org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:298)\r\n' +
+    '\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)\r\n' +
+    'Caused by: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:235)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)\r\n' +
+    '\t... 11 more\r\n' +
+    'Caused by: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.PendingFuture.get(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:233)\r\n' +
+    '\t... 12 more\r\n' +
+    'Caused by: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.writeFile(Native Method)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl$WriteTask.run(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.implWrite(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.AsynchronousFileChannelImpl.write(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:231)\r\n' +
+    '\t... 12 more\r\n' +
+    '\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 08:23:27.829'
+}
+{
+  message: 'Apr 15, 2026 8:23:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint notify\r\n' +
+    'WARNING: Failed to send notification message.\r\n' +
+    'org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ParentProcessWatcher.lambda$1(ParentProcessWatcher.java:86)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.notify(RemoteEndpoint.java:135)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:88)\r\n' +
+    '\tat jdk.proxy4/jdk.proxy4.$Proxy12.notifyProgress(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendStatus(ProgressReporterManager.java:290)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.sendProgress(ProgressReporterManager.java:239)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.handlers.ProgressReporterManager$ProgressReporter.done(ProgressReporterManager.java:222)\r\n' +
+    '\tat org.eclipse.core.internal.jobs.Worker.run(Worker.java:74)\r\n' +
+    'Caused by: java.io.IOException: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:235)\r\n' +
+    '\tat org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:67)\r\n' +
+    '\t... 8 more\r\n' +
+    'Caused by: java.util.concurrent.ExecutionException: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.PendingFuture.get(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:233)\r\n' +
+    '\t... 9 more\r\n' +
+    'Caused by: java.io.IOException: The pipe is being closed\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.writeFile(Native Method)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl$WriteTask.run(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.WindowsAsynchronousFileChannelImpl.implWrite(Unknown Source)\r\n' +
+    '\tat java.base/sun.nio.ch.AsynchronousFileChannelImpl.write(Unknown Source)\r\n' +
+    '\tat org.eclipse.jdt.ls.core.internal.ConnectionStreamFactory$NamedPipeOutputStream.write(ConnectionStreamFactory.java:231)\r\n' +
+    '\t... 9 more\r\n' +
+    '\r\n',
+  level: 'info',
+  timestamp: '2026-04-15 08:23:27.830'
+}
