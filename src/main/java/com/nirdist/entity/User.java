@@ -31,13 +31,13 @@ public class User {
     private String password;
 
     @Column(name = "v_birth")
-    private String vBirth;
+    private String vBirth = "";
 
     @Column(name = "bio")
-    private String bio;
+    private String bio = "";
 
     @Column(name = "profile_picture")
-    private String profilePicture;
+    private String profilePicture = "";
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

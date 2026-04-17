@@ -23,22 +23,42 @@ public class AuthService {
     private PasswordEncoder passwordEncoder;
 
     public AuthResponse register(RegisterRequest request) {
+        // Validate required fields
+        if (request.getEmail() == null || request.getEmail().isEmpty()) {
+            return new AuthResponse(null, null, "Email is required");
+        }
+        if (request.getPassword() == null || request.getPassword().isEmpty()) {
+            return new AuthResponse(null, null, "Password is required");
+        }
+        
+        // Generate username if not provided
+        String username = request.getVUsername();
+        if (username == null || username.isEmpty()) {
+            username = request.getEmail().split("@")[0]; // Use email prefix as username
+        }
+        
+        // Generate name if not provided
+        String name = request.getVName();
+        if (name == null || name.isEmpty()) {
+            name = username; // Use username as name
+        }
+
         // Check if user already exists
         if (userRepository.findByEmail(request.getEmail()).isPresent()) {
             return new AuthResponse(null, null, "Email already registered");
         }
 
-        if (userRepository.findByVUsername(request.getVUsername()).isPresent()) {
+        if (userRepository.findByVUsername(username).isPresent()) {
             return new AuthResponse(null, null, "Username already taken");
         }
 
         // Create new user
         User user = new User();
-        user.setVName(request.getVName());
-        user.setVUsername(request.getVUsername());
+        user.setVName(name);
+        user.setVUsername(username);
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setBio(request.getBio());
+        user.setBio(request.getBio() != null ? request.getBio() : "");
         user.setProfilePicture(request.getProfilePicture());
 
         User savedUser = userRepository.save(user);
