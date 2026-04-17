@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
+import java.util.Base64;
 import java.util.Date;
-import javax.crypto.spec.SecretKeySpec;
 
 @Component
 public class JwtTokenProvider {
@@ -24,26 +24,25 @@ public class JwtTokenProvider {
     private long jwtExpirationMs;
 
     private Key getSigningKey() {
-        // Use Keys.hmacShaKeyFor which generates a proper 512-bit key
-        // But first ensure we have enough bytes (minimum 64 bytes for HS512)
-        byte[] secretBytes = jwtSecret.getBytes();
-        
-        if (secretBytes.length < 64) {
-            // If secret is too short, generate a proper key from it
-            logger.warn("JWT secret is too short. Generating a secure 512-bit key from provided secret.");
-            try {
-                Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
-                return key;
-            } catch (Exception e) {
-                logger.error("Error generating JWT key", e);
-                // Fallback: create a minimum 512-bit key
-                byte[] decodedKey = new byte[64];
-                System.arraycopy(secretBytes, 0, decodedKey, 0, Math.min(secretBytes.length, 64));
-                return new SecretKeySpec(decodedKey, SignatureAlgorithm.HS512.getJcaName());
+        try {
+            // Decode the Base64-encoded secret to get the raw bytes
+            byte[] decodedSecret = Base64.getDecoder().decode(jwtSecret);
+            logger.debug("JWT secret decoded from Base64. Length: {} bytes", decodedSecret.length);
+            
+            if (decodedSecret.length < 64) {
+                logger.error("JWT secret is only {} bytes but HS512 requires at least 64 bytes (512 bits)", decodedSecret.length);
+                throw new IllegalStateException("JWT secret must be at least 512 bits (64 bytes) for HS512 algorithm");
             }
+            
+            // Create the signing key from the decoded bytes
+            return Keys.hmacShaKeyFor(decodedSecret);
+        } catch (IllegalArgumentException e) {
+            logger.error("Failed to decode Base64 JWT secret. Ensure jwt.secret in application.properties is valid Base64", e);
+            throw new RuntimeException("Invalid JWT secret configuration", e);
+        } catch (Exception e) {
+            logger.error("Error generating JWT key", e);
+            throw new RuntimeException("Failed to generate JWT signing key", e);
         }
-        
-        return Keys.hmacShaKeyFor(secretBytes);
     }
 
     public String generateToken(String email) {
