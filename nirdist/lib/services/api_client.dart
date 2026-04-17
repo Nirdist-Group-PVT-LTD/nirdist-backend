@@ -1,17 +1,68 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/models.dart';
+import '../models/chat_models.dart';
 
 class ApiClient {
-  static const String baseUrl = 'https://nirdist-backend.onrender.com/api';  // Direct Render URL
+  static const String baseUrl = 'https://nirdist-backend.onrender.com/api';  // Production Render
   // static const String baseUrl = 'http://localhost:8080/api';  // Local testing
   // static const String baseUrl = 'https://api.nirdist.com/api';  // Cloudflare CNAME (fix .np issue first)
   // For Android device/emulator, use: 'http://10.0.2.2:8080/api'
+  static const String _tokenKey = 'auth_token';
+  static const String _userKey = 'auth_user';
   static String? _token;
+  static Map<String, dynamic>? _cachedUser;
 
-  static void setToken(String token) {
-    _token = token;
+  /// Initialize token and user from persistent storage
+  static Future<void> initializeToken() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _token = prefs.getString(_tokenKey);
+      final userJson = prefs.getString(_userKey);
+      if (userJson != null) {
+        _cachedUser = jsonDecode(userJson);
+      }
+    } catch (e) {
+      print('Error loading token/user from storage: $e');
+    }
   }
+
+  /// Save token and user to persistent storage
+  static Future<void> setToken(String token, [Map<String, dynamic>? user]) async {
+    _token = token;
+    if (user != null) {
+      _cachedUser = user;
+    }
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_tokenKey, token);
+      if (user != null) {
+        await prefs.setString(_userKey, jsonEncode(user));
+      }
+    } catch (e) {
+      print('Error saving token/user to storage: $e');
+    }
+  }
+
+  /// Clear token and user from memory and storage
+  static Future<void> clearToken() async {
+    _token = null;
+    _cachedUser = null;
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(_tokenKey);
+      await prefs.remove(_userKey);
+    } catch (e) {
+      print('Error clearing token from storage: $e');
+    }
+  }
+
+  /// Get current token
+  static String? getToken() => _token;
+
+  /// Get cached user data
+  static Map<String, dynamic>? getCachedUser() => _cachedUser;
 
   static Map<String, String> _getHeaders() {
     final headers = {'Content-Type': 'application/json'};
@@ -19,6 +70,32 @@ class ApiClient {
       headers['Authorization'] = 'Bearer $_token';
     }
     return headers;
+  }
+
+  static Map<String, dynamic> _parseObjectResponse(String body) {
+    final decoded = jsonDecode(body);
+    if (decoded is Map<String, dynamic>) {
+      final data = decoded['data'];
+      if (data is Map<String, dynamic>) {
+        return data;
+      }
+      return decoded;
+    }
+    throw Exception('Invalid response format');
+  }
+
+  static List<dynamic> _parseListResponse(String body) {
+    final decoded = jsonDecode(body);
+    if (decoded is Map<String, dynamic>) {
+      final data = decoded['data'];
+      if (data is List) {
+        return data;
+      }
+    }
+    if (decoded is List) {
+      return decoded;
+    }
+    throw Exception('Invalid response format');
   }
 
   // Auth
@@ -33,8 +110,8 @@ class ApiClient {
         Uri.parse('$baseUrl/auth/register'),
         headers: _getHeaders(),
         body: jsonEncode({
-          'v_name': vName,
-          'v_username': vUsername,
+          'vName': vName,
+          'vUsername': vUsername,
           'email': email,
           'password': password,
         }),
@@ -42,7 +119,8 @@ class ApiClient {
 
       if (response.statusCode == 201) {
         final data = jsonDecode(response.body);
-        _token = data['token'];
+        // Persist token and user data
+        await setToken(data['token'], data['user'] ?? data);
         return data;
       } else {
         if (response.body.isEmpty) {
@@ -69,14 +147,15 @@ class ApiClient {
         Uri.parse('$baseUrl/auth/login'),
         headers: _getHeaders(),
         body: jsonEncode({
-          'v_username': vUsername,
+          'vUsername': vUsername,
           'password': password,
         }),
       );
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        _token = data['token'];
+        // Persist token and user data
+        await setToken(data['token'], data['user'] ?? data);
         return data;
       } else {
         if (response.body.isEmpty) {
@@ -108,8 +187,8 @@ class ApiClient {
         Uri.parse('$baseUrl/auth/register'),
         headers: _getHeaders(),
         body: jsonEncode({
-          'v_username': username,
-          'v_name': fullName,
+          'vUsername': username,
+          'vName': fullName,
           'email': email,
           'password': password,
           'bio': bio,
@@ -120,17 +199,11 @@ class ApiClient {
       if (response.statusCode == 201) {
         final data = jsonDecode(response.body);
         _token = data['token'];
+        final userPayload = (data['user'] as Map<String, dynamic>?) ?? {};
         return {
           'success': true,
           'token': data['token'],
-          'user': data['user'] ?? {
-            'id': data['v_id'],
-            'username': data['v_username'],
-            'fullName': data['v_name'],
-            'email': data['email'],
-            'bio': data['bio'] ?? '',
-            'profilePicture': data['profilePicture'] ?? '',
-          }
+          'user': userPayload,
         };
       } else {
         if (response.body.isEmpty) {
@@ -177,20 +250,11 @@ class ApiClient {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         _token = data['token'];
+        final userPayload = (data['user'] as Map<String, dynamic>?) ?? {};
         return {
           'success': true,
           'token': data['token'],
-          'user': data['user'] ?? {
-            'id': data['v_id'],
-            'username': data['v_username'],
-            'fullName': data['v_name'],
-            'email': data['email'],
-            'bio': data['bio'] ?? '',
-            'profilePicture': data['profilePicture'] ?? '',
-            'followerCount': data['followerCount'] ?? 0,
-            'followingCount': data['followingCount'] ?? 0,
-            'postCount': data['postCount'] ?? 0,
-          }
+          'user': userPayload,
         };
       } else {
         return {
@@ -215,7 +279,7 @@ class ApiClient {
       );
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body)['data'];
+        final data = _parseObjectResponse(response.body);
         return User.fromJson(data);
       } else {
         throw Exception('Failed to fetch profile');
@@ -233,7 +297,7 @@ class ApiClient {
       );
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body)['data'];
+        final data = _parseListResponse(response.body);
         return data.map((u) => User.fromJson(u)).toList();
       } else {
         throw Exception('Search failed');
@@ -252,7 +316,7 @@ class ApiClient {
       );
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body)['data'];
+        final data = _parseListResponse(response.body);
         return data.map((p) => Post.fromJson(p)).toList();
       } else {
         throw Exception('Failed to fetch feed');
@@ -270,10 +334,28 @@ class ApiClient {
       );
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body)['data'];
+        final data = _parseObjectResponse(response.body);
         return Post.fromJson(data);
       } else {
         throw Exception('Failed to fetch post');
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<List<Post>> getUserPosts(int vId) async {
+    try {
+      final response = await http.get(
+        Uri.parse('$baseUrl/posts/user/$vId'),
+        headers: _getHeaders(),
+      );
+
+      if (response.statusCode == 200) {
+        final data = _parseListResponse(response.body);
+        return data.map((p) => Post.fromJson(p)).toList();
+      } else {
+        throw Exception('Failed to fetch user posts');
       }
     } catch (e) {
       rethrow;
@@ -287,9 +369,42 @@ class ApiClient {
         headers: _getHeaders(),
       );
 
-      if (response.statusCode != 200) {
+      if (response.statusCode != 200 && response.statusCode != 204) {
         throw Exception('Failed to delete post');
       }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<Post> createPost({
+    required int vId,
+    required String vName,
+    required String vUsername,
+    required String description,
+    List<String> media = const [],
+  }) async {
+    try {
+      final payload = {
+        'vId': vId,
+        'vName': vName,
+        'vUsername': vUsername,
+        'discription': description,
+        'media': media.isEmpty ? null : jsonEncode(media),
+      };
+
+      final response = await http.post(
+        Uri.parse('$baseUrl/posts'),
+        headers: _getHeaders(),
+        body: jsonEncode(payload),
+      );
+
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        final data = _parseObjectResponse(response.body);
+        return Post.fromJson(data);
+      }
+
+      throw Exception('Failed to create post');
     } catch (e) {
       rethrow;
     }
@@ -304,11 +419,44 @@ class ApiClient {
       );
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body)['data'];
+        final data = _parseListResponse(response.body);
         return data.map((s) => Story.fromJson(s)).toList();
       } else {
         throw Exception('Failed to fetch stories');
       }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<Story> createStory({
+    required int vId,
+    required String vName,
+    required String vUsername,
+    required String mediaUrl,
+    String caption = '',
+  }) async {
+    try {
+      final payload = {
+        'vId': vId,
+        'vName': vName,
+        'vUsername': vUsername,
+        'media': mediaUrl,
+        'caption': caption,
+      };
+
+      final response = await http.post(
+        Uri.parse('$baseUrl/stories'),
+        headers: _getHeaders(),
+        body: jsonEncode(payload),
+      );
+
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        final data = _parseObjectResponse(response.body);
+        return Story.fromJson(data);
+      }
+
+      throw Exception('Failed to create story');
     } catch (e) {
       rethrow;
     }
@@ -323,7 +471,7 @@ class ApiClient {
       );
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body)['data'];
+        final data = _parseListResponse(response.body);
         return data.map((n) => Note.fromJson(n)).toList();
       } else {
         throw Exception('Failed to fetch notes');
@@ -342,7 +490,7 @@ class ApiClient {
       );
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body)['data'];
+        final data = _parseListResponse(response.body);
         return data.map((s) => Sound.fromJson(s)).toList();
       } else {
         throw Exception('Failed to fetch sounds');
@@ -356,12 +504,12 @@ class ApiClient {
   static Future<List<Comment>> getComments(int pId) async {
     try {
       final response = await http.get(
-        Uri.parse('$baseUrl/comments/$pId'),
+        Uri.parse('$baseUrl/comments/post/$pId'),
         headers: _getHeaders(),
       );
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body)['data'];
+        final data = _parseListResponse(response.body);
         return data.map((c) => Comment.fromJson(c)).toList();
       } else {
         throw Exception('Failed to fetch comments');
@@ -396,6 +544,163 @@ class ApiClient {
 
       if (response.statusCode != 200) {
         throw Exception('Failed to unfollow user');
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  // Chat
+  static Future<List<ChatRoom>> getChatRooms(int userId) async {
+    try {
+      final response = await http.get(
+        Uri.parse('$baseUrl/chat/rooms?userId=$userId'),
+        headers: _getHeaders(),
+      );
+
+      if (response.statusCode == 200) {
+        final data = _parseListResponse(response.body);
+        return data.map((item) => ChatRoom.fromJson(item)).toList();
+      }
+      throw Exception('Failed to load chat rooms');
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<ChatRoom> createChatRoom({
+    required int createdBy,
+    required List<int> participantIds,
+    String? name,
+    bool isGroup = false,
+  }) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/chat/rooms'),
+        headers: _getHeaders(),
+        body: jsonEncode({
+          'name': name,
+          'isGroup': isGroup,
+          'createdBy': createdBy,
+          'participantIds': participantIds,
+        }),
+      );
+
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        final data = _parseObjectResponse(response.body);
+        return ChatRoom.fromJson(data);
+      }
+      throw Exception('Failed to create chat room');
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<List<ChatMessage>> getChatMessages(int roomId) async {
+    try {
+      final response = await http.get(
+        Uri.parse('$baseUrl/chat/rooms/$roomId/messages'),
+        headers: _getHeaders(),
+      );
+
+      if (response.statusCode == 200) {
+        final data = _parseListResponse(response.body);
+        return data.map((item) => ChatMessage.fromJson(item)).toList();
+      }
+      throw Exception('Failed to load messages');
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<ChatMessage> sendChatMessage({
+    required int roomId,
+    required int senderId,
+    required String content,
+  }) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/chat/rooms/$roomId/messages'),
+        headers: _getHeaders(),
+        body: jsonEncode({
+          'senderId': senderId,
+          'content': content,
+          'messageType': 'TEXT',
+        }),
+      );
+
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        final data = _parseObjectResponse(response.body);
+        return ChatMessage.fromJson(data);
+      }
+      throw Exception('Failed to send message');
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  // Calls
+  static Future<CallSession> createCallSession({required int createdBy}) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/calls/sessions'),
+        headers: _getHeaders(),
+        body: jsonEncode({
+          'createdBy': createdBy,
+        }),
+      );
+
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        final data = _parseObjectResponse(response.body);
+        return CallSession.fromJson(data);
+      }
+      throw Exception('Failed to create call');
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<void> joinCallSession({required int sessionId, required int userId}) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/calls/sessions/$sessionId/join'),
+        headers: _getHeaders(),
+        body: jsonEncode({'userId': userId}),
+      );
+
+      if (response.statusCode != 200) {
+        throw Exception('Failed to join call');
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<void> leaveCallSession({required int sessionId, required int userId}) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/calls/sessions/$sessionId/leave'),
+        headers: _getHeaders(),
+        body: jsonEncode({'userId': userId}),
+      );
+
+      if (response.statusCode != 200) {
+        throw Exception('Failed to leave call');
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static Future<void> endCallSession({required int sessionId}) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/calls/sessions/$sessionId/end'),
+        headers: _getHeaders(),
+      );
+
+      if (response.statusCode != 200) {
+        throw Exception('Failed to end call');
       }
     } catch (e) {
       rethrow;

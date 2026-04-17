@@ -9,7 +9,11 @@ class NoteBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Notes coming soon')),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
         child: Container(
@@ -27,7 +31,7 @@ class NoteBubble extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 16,
-                    child: Text(note.vName[0]),
+                    child: Text(note.vName.isNotEmpty ? note.vName[0] : '?'),
                   ),
                   const SizedBox(width: 8),
                   Column(

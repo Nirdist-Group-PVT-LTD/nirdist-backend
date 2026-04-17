@@ -32,10 +32,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
         leading: SizedBox.shrink(),
       ),
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Text(
                 'NIRDIST',
                 style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                  color: Colors.red,
+                  color: colorScheme.primary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -79,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: BorderSide(color: colorScheme.primary),
                   ),
                   contentPadding: EdgeInsets.symmetric(vertical: 16),
                 ),
@@ -111,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: BorderSide(color: colorScheme.primary),
                   ),
                   contentPadding: EdgeInsets.symmetric(vertical: 16),
                 ),
@@ -128,12 +129,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Container(
                         padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: Colors.red.shade900,
+                          color: colorScheme.errorContainer,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
                           authProvider.errorMessage!,
-                          style: TextStyle(color: Colors.red.shade100),
+                          style: TextStyle(color: colorScheme.onErrorContainer),
                         ),
                       ),
                     );
@@ -153,8 +154,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           ? null
                           : () => _handleLogin(context),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
-                        disabledBackgroundColor: Colors.red.shade900,
+                        backgroundColor: colorScheme.primary,
+                        disabledBackgroundColor: colorScheme.primaryContainer,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -195,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
-                        color: Colors.red,
+                        color: colorScheme.primary,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

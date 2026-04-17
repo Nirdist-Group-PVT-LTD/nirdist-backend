@@ -10,11 +10,51 @@ class AuthProvider extends ChangeNotifier {
   bool _isLoading = false;
   String? _errorMessage;
 
+  AuthProvider() {
+    _restoreSession();
+  }
+
   User? get currentUser => _currentUser;
   String? get token => _token;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
   bool get isAuthenticated => _currentUser != null && _token != null;
+
+  Future<void> _restoreSession() async {
+    final token = ApiClient.getToken();
+    final cachedUser = ApiClient.getCachedUser();
+
+    if (token == null || token.isEmpty) {
+      return;
+    }
+
+    _token = token;
+    if (cachedUser != null) {
+      _currentUser = _buildUserFromPayload(cachedUser);
+    }
+    notifyListeners();
+  }
+
+  User _buildUserFromPayload(Map<String, dynamic> payload) {
+    return User(
+      vId: payload['v_id'] ?? payload['vId'] ?? payload['id'] ?? 0,
+      vName: payload['v_name'] ?? payload['fullName'] ?? payload['vName'] ?? '',
+      vUsername:
+          payload['v_username'] ?? payload['username'] ?? payload['vUsername'] ?? '',
+      email: payload['email'] ?? '',
+      bio: payload['bio'] ?? '',
+      profilePicture: payload['profilePicture'] ?? payload['profile_picture'] ?? '',
+      followerCount: payload['followerCount'] ?? 0,
+      followingCount: payload['followingCount'] ?? 0,
+      postCount: payload['postCount'] ?? 0,
+    );
+  }
+
+  Future<void> _persistSession(String token, Map<String, dynamic> userPayload) async {
+    await ApiClient.setToken(token, userPayload);
+    _token = token;
+    _currentUser = _buildUserFromPayload(userPayload);
+  }
 
   Future<bool> signup({
     required String username,
@@ -37,19 +77,8 @@ class AuthProvider extends ChangeNotifier {
       );
 
       if (response['success'] == true) {
-        _token = response['token'];
-        _currentUser = User(
-          vId: response['user']['v_id'] ?? response['user']['id'] ?? 0,
-          vName:
-              response['user']['v_name'] ?? response['user']['fullName'] ?? '',
-          vUsername:
-              response['user']['v_username'] ??
-              response['user']['username'] ??
-              '',
-          followerCount: response['user']['followerCount'] ?? 0,
-          followingCount: response['user']['followingCount'] ?? 0,
-          postCount: response['user']['postCount'] ?? 0,
-        );
+        final userPayload = (response['user'] as Map<String, dynamic>?) ?? {};
+        await _persistSession(response['token'], userPayload);
         notifyListeners();
         return true;
       } else {
@@ -79,19 +108,8 @@ class AuthProvider extends ChangeNotifier {
       );
 
       if (response['success'] == true) {
-        _token = response['token'];
-        _currentUser = User(
-          vId: response['user']['v_id'] ?? response['user']['id'] ?? 0,
-          vName:
-              response['user']['v_name'] ?? response['user']['fullName'] ?? '',
-          vUsername:
-              response['user']['v_username'] ??
-              response['user']['username'] ??
-              '',
-          followerCount: response['user']['followerCount'] ?? 0,
-          followingCount: response['user']['followingCount'] ?? 0,
-          postCount: response['user']['postCount'] ?? 0,
-        );
+        final userPayload = (response['user'] as Map<String, dynamic>?) ?? {};
+        await _persistSession(response['token'], userPayload);
         notifyListeners();
         return true;
       } else {
@@ -113,7 +131,7 @@ class AuthProvider extends ChangeNotifier {
     _currentUser = null;
     _token = null;
     _errorMessage = null;
-    ApiClient.setToken('');
+    ApiClient.clearToken();
     notifyListeners();
   }
 

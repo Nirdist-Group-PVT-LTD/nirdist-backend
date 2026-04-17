@@ -57,7 +57,11 @@ class _ActivityScreenState extends State<ActivityScreen> with SingleTickerProvid
           title: const Text('User liked your post'),
           subtitle: const Text('2 hours ago'),
           trailing: const Icon(Icons.chevron_right),
-          onTap: () {},
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Activity details coming soon')),
+            );
+          },
         );
       },
     );
@@ -74,10 +78,18 @@ class _ActivityScreenState extends State<ActivityScreen> with SingleTickerProvid
           title: const Text('User started following you'),
           subtitle: const Text('1 hour ago'),
           trailing: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Follow actions coming soon')),
+              );
+            },
             child: const Text('Follow'),
           ),
-          onTap: () {},
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Profile view coming soon')),
+            );
+          },
         );
       },
     );

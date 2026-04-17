@@ -2,9 +2,10 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'api_client.dart';
 
 class FileUploadService {
-  static const String baseUrl = 'http://localhost:3000/api';
+  static String get baseUrl => ApiClient.baseUrl;
   static String? _token;
 
   static void setToken(String token) {

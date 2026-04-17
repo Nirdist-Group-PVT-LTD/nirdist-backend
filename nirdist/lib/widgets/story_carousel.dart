@@ -32,7 +32,10 @@ class _StoryCarouselState extends State<StoryCarousel> {
                     height: 60,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: Colors.red, width: 2),
+                      border: Border.all(
+                        color: Theme.of(context).colorScheme.primary,
+                        width: 2,
+                      ),
                     ),
                     child: const Icon(Icons.add, size: 30),
                   ),
@@ -51,7 +54,9 @@ class _StoryCarouselState extends State<StoryCarousel> {
           padding: const EdgeInsets.all(8),
           child: GestureDetector(
             onTap: () {
-              // View story
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Story view coming soon')),
+              );
             },
             child: Column(
               children: [
@@ -61,7 +66,9 @@ class _StoryCarouselState extends State<StoryCarousel> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: isExpiring ? Colors.red : Colors.green,
+                      color: isExpiring
+                          ? Theme.of(context).colorScheme.secondary
+                          : Theme.of(context).colorScheme.primary,
                       width: 2,
                     ),
                   ),

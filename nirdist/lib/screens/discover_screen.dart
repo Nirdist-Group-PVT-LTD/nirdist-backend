@@ -107,7 +107,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> with SingleTickerProvid
                             title: Text(result.vName ?? ''),
                             subtitle: Text('@${result.vUsername ?? ''}'),
                             onTap: () {
-                              // Navigate to user profile
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Profile view coming soon')),
+                              );
                             },
                           );
                         },

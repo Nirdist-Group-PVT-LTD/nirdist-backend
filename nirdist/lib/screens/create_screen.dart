@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/app_providers.dart';
+import '../providers/auth_provider.dart';
+import '../services/api_client.dart';
 
 class CreateScreen extends StatefulWidget {
   const CreateScreen({Key? key}) : super(key: key);
@@ -69,6 +73,8 @@ class CreatePostTab extends StatefulWidget {
 
 class _CreatePostTabState extends State<CreatePostTab> {
   final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _mediaController = TextEditingController();
+  bool _isSubmitting = false;
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +84,9 @@ class _CreatePostTabState extends State<CreatePostTab> {
         children: [
           GestureDetector(
             onTap: () {
-              // Open image picker
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Media upload coming soon. Use a URL for now.')),
+              );
             },
             child: Container(
               width: double.infinity,
@@ -111,24 +119,95 @@ class _CreatePostTabState extends State<CreatePostTab> {
             ),
           ),
           const SizedBox(height: 20),
+          TextField(
+            controller: _mediaController,
+            decoration: InputDecoration(
+              hintText: 'Optional media URL(s), comma-separated',
+              filled: true,
+              fillColor: Colors.grey.shade900,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {
-              // Create post
-            },
+            onPressed: _isSubmitting ? null : () => _handleCreatePost(context),
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(double.infinity, 50),
-              backgroundColor: Colors.red,
+              backgroundColor: Theme.of(context).colorScheme.primary,
             ),
-            child: const Text('Post'),
+            child: _isSubmitting
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Text('Post'),
           ),
         ],
       ),
     );
   }
 
+  Future<void> _handleCreatePost(BuildContext context) async {
+    final description = _descriptionController.text.trim();
+    final mediaUrls = _mediaController.text
+        .split(',')
+        .map((value) => value.trim())
+        .where((value) => value.isNotEmpty)
+        .toList();
+
+    if (description.isEmpty && mediaUrls.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Add a description or media URL')),
+      );
+      return;
+    }
+
+    final authProvider = context.read<AuthProvider>();
+    final user = authProvider.currentUser;
+    if (user == null || user.vId == 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please log in to post')),
+      );
+      return;
+    }
+
+    setState(() => _isSubmitting = true);
+    try {
+      await ApiClient.createPost(
+        vId: user.vId,
+        vName: user.vName,
+        vUsername: user.vUsername,
+        description: description,
+        media: mediaUrls,
+      );
+      _descriptionController.clear();
+      _mediaController.clear();
+      if (mounted) {
+        await context.read<PostProvider>().loadFeed(page: 1);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Post created')),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to post: $e')),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() => _isSubmitting = false);
+      }
+    }
+  }
+
   @override
   void dispose() {
     _descriptionController.dispose();
+    _mediaController.dispose();
     super.dispose();
   }
 }
@@ -145,17 +224,120 @@ class CreateStoryTab extends StatelessWidget {
           const Text('Create a 24-hour story'),
           const SizedBox(height: 24),
           ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () => _showCreateStoryDialog(context),
             icon: const Icon(Icons.camera),
             label: const Text('Take Photo'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
+              backgroundColor: Theme.of(context).colorScheme.primary,
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
             ),
           ),
         ],
       ),
     );
+  }
+
+  void _showCreateStoryDialog(BuildContext context) {
+    final mediaController = TextEditingController();
+    final captionController = TextEditingController();
+    bool isSubmitting = false;
+
+    showDialog(
+      context: context,
+      builder: (dialogContext) {
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            return AlertDialog(
+              title: const Text('Create Story'),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextField(
+                    controller: mediaController,
+                    decoration: const InputDecoration(
+                      labelText: 'Media URL',
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: captionController,
+                    decoration: const InputDecoration(
+                      labelText: 'Caption (optional)',
+                    ),
+                  ),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(dialogContext),
+                  child: const Text('Cancel'),
+                ),
+                ElevatedButton(
+                  onPressed: isSubmitting
+                      ? null
+                      : () async {
+                          final mediaUrl = mediaController.text.trim();
+                          if (mediaUrl.isEmpty) {
+                            ScaffoldMessenger.of(dialogContext).showSnackBar(
+                              const SnackBar(content: Text('Media URL is required')),
+                            );
+                            return;
+                          }
+
+                          final authProvider = context.read<AuthProvider>();
+                          final user = authProvider.currentUser;
+                          if (user == null || user.vId == 0) {
+                            ScaffoldMessenger.of(dialogContext).showSnackBar(
+                              const SnackBar(content: Text('Please log in to post')),
+                            );
+                            return;
+                          }
+
+                          setDialogState(() => isSubmitting = true);
+                          try {
+                            await ApiClient.createStory(
+                              vId: user.vId,
+                              vName: user.vName,
+                              vUsername: user.vUsername,
+                              mediaUrl: mediaUrl,
+                              caption: captionController.text.trim(),
+                            );
+                            if (dialogContext.mounted) {
+                              await context.read<StoryProvider>().loadStories(page: 1);
+                              Navigator.pop(dialogContext);
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Story created')),
+                              );
+                            }
+                          } catch (e) {
+                            if (dialogContext.mounted) {
+                              ScaffoldMessenger.of(dialogContext).showSnackBar(
+                                SnackBar(content: Text('Failed to create story: $e')),
+                              );
+                            }
+                          } finally {
+                            if (dialogContext.mounted) {
+                              setDialogState(() => isSubmitting = false);
+                            }
+                          }
+                        },
+                  child: isSubmitting
+                      ? const SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Text('Post'),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    ).whenComplete(() {
+      mediaController.dispose();
+      captionController.dispose();
+    });
   }
 }
 
@@ -188,7 +370,7 @@ class _CreateSoundTabState extends State<CreateSoundTab> {
                   Icon(
                     _isRecording ? Icons.mic : Icons.mic_none,
                     size: 48,
-                    color: Colors.red,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   const SizedBox(height: 8),
                   Text(_isRecording ? 'Recording...' : 'Ready to record'),
@@ -230,8 +412,14 @@ class _CreateSoundTabState extends State<CreateSoundTab> {
               const SizedBox(width: 12),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Sound upload coming soon')),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                  ),
                   child: const Text('Upload'),
                 ),
               ),
@@ -293,10 +481,14 @@ class _CreateNoteTabState extends State<CreateNoteTab> {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Notes coming soon')),
+              );
+            },
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(double.infinity, 50),
-              backgroundColor: Colors.red,
+              backgroundColor: Theme.of(context).colorScheme.primary,
             ),
             child: const Text('Post Note'),
           ),

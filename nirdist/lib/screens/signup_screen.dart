@@ -42,10 +42,11 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
         leading: SizedBox.shrink(),
       ),
@@ -60,7 +61,7 @@ class _SignupScreenState extends State<SignupScreen> {
               Text(
                 'NIRDIST',
                 style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                  color: Colors.red,
+                  color: colorScheme.primary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -122,7 +123,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: BorderSide(color: colorScheme.primary),
                   ),
                   contentPadding: EdgeInsets.symmetric(vertical: 16),
                 ),
@@ -154,7 +155,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: BorderSide(color: colorScheme.primary),
                   ),
                   contentPadding: EdgeInsets.symmetric(vertical: 16),
                 ),
@@ -171,12 +172,12 @@ class _SignupScreenState extends State<SignupScreen> {
                       child: Container(
                         padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: Colors.red.shade900,
+                          color: colorScheme.errorContainer,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
                           authProvider.errorMessage!,
-                          style: TextStyle(color: Colors.red.shade100),
+                          style: TextStyle(color: colorScheme.onErrorContainer),
                         ),
                       ),
                     );
@@ -196,8 +197,8 @@ class _SignupScreenState extends State<SignupScreen> {
                           ? null
                           : () => _handleSignup(context),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
-                        disabledBackgroundColor: Colors.red.shade900,
+                        backgroundColor: colorScheme.primary,
+                        disabledBackgroundColor: colorScheme.primaryContainer,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -238,7 +239,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     child: Text(
                       'Login',
                       style: TextStyle(
-                        color: Colors.red,
+                        color: colorScheme.primary,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -274,7 +275,7 @@ class _SignupScreenState extends State<SignupScreen> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.red),
+          borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
         ),
         contentPadding: EdgeInsets.symmetric(vertical: 16),
       ),

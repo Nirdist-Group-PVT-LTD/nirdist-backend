@@ -28,7 +28,9 @@ class _PostCardState extends State<PostCard> {
             child: Row(
               children: [
                 CircleAvatar(
-                  child: Text(widget.post.vName[0]),
+                  child: Text(
+                    widget.post.vName.isNotEmpty ? widget.post.vName[0] : '?',
+                  ),
                 ),
                 const SizedBox(width: 12),
                 Column(
@@ -39,7 +41,14 @@ class _PostCardState extends State<PostCard> {
                   ],
                 ),
                 const Spacer(),
-                IconButton(icon: const Icon(Icons.more_vert), onPressed: () {}),
+                IconButton(
+                  icon: const Icon(Icons.more_vert),
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('More actions coming soon')),
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -104,7 +113,9 @@ class _PostCardState extends State<PostCard> {
                   child: Row(
                     children: [
                       Icon(_isLiked ? Icons.favorite : Icons.favorite_border,
-                          color: _isLiked ? Colors.red : Colors.grey),
+                          color: _isLiked
+                              ? Theme.of(context).colorScheme.primary
+                              : Colors.grey),
                       const SizedBox(width: 4),
                       Text('${widget.post.reactions.length + _reactionCount}'),
                     ],
@@ -117,14 +128,28 @@ class _PostCardState extends State<PostCard> {
                     Text('${widget.post.comments.length}'),
                   ],
                 ),
-                Row(
-                  children: [
-                    const Icon(Icons.share),
-                    const SizedBox(width: 4),
-                    const Text('Share'),
-                  ],
+                GestureDetector(
+                  onTap: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Sharing coming soon')),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      const Icon(Icons.share),
+                      const SizedBox(width: 4),
+                      const Text('Share'),
+                    ],
+                  ),
                 ),
-                const Icon(Icons.bookmark_outline),
+                GestureDetector(
+                  onTap: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Bookmarks coming soon')),
+                    );
+                  },
+                  child: const Icon(Icons.bookmark_outline),
+                ),
               ],
             ),
           ),

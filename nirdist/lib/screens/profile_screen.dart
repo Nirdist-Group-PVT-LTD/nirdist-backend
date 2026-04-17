@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_providers.dart';
 import '../providers/auth_provider.dart';
+import '../models/models.dart';
+import '../services/api_client.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -12,13 +14,44 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  List<Post> _userPosts = [];
+  bool _isLoadingPosts = false;
+  String? _postsError;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
-    // Load current user profile (use userId 1 as example)
-    context.read<UserProvider>().loadProfile(1);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final authProvider = context.read<AuthProvider>();
+      final currentUserId = authProvider.currentUser?.vId ?? 0;
+      if (currentUserId > 0) {
+        context.read<UserProvider>().loadProfile(currentUserId);
+        _loadUserPosts(currentUserId);
+      }
+    });
+  }
+
+  Future<void> _loadUserPosts(int vId) async {
+    setState(() {
+      _isLoadingPosts = true;
+      _postsError = null;
+    });
+
+    try {
+      final posts = await ApiClient.getUserPosts(vId);
+      if (mounted) {
+        setState(() => _userPosts = posts);
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() => _postsError = e.toString());
+      }
+    } finally {
+      if (mounted) {
+        setState(() => _isLoadingPosts = false);
+      }
+    }
   }
 
   @override
@@ -28,7 +61,14 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
         title: const Text('Profile'),
         elevation: 0,
         actions: [
-          IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Settings coming soon')),
+              );
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () => _logout(context),
@@ -56,7 +96,12 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                     children: [
                       CircleAvatar(
                         radius: 50,
-                        child: Text(user.vName[0]),
+                        backgroundImage: user.profilePicture.isNotEmpty
+                            ? NetworkImage(user.profilePicture)
+                            : null,
+                        child: user.profilePicture.isEmpty
+                            ? Text(user.vName.isNotEmpty ? user.vName[0] : '?')
+                            : null,
                       ),
                       const SizedBox(height: 16),
                       Text(
@@ -67,6 +112,14 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                         '@${user.vUsername}',
                         style: TextStyle(fontSize: 16, color: Colors.grey.shade400),
                       ),
+                      if (user.bio.isNotEmpty) ...[
+                        const SizedBox(height: 8),
+                        Text(
+                          user.bio,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 14, color: Colors.grey.shade300),
+                        ),
+                      ],
                       const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -105,14 +158,22 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                         children: [
                           Expanded(
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('Edit profile coming soon')),
+                                );
+                              },
                               child: const Text('Edit Profile'),
                             ),
                           ),
                           const SizedBox(width: 12),
                           Expanded(
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('Share profile coming soon')),
+                                );
+                              },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.grey.shade800,
                               ),
@@ -154,15 +215,44 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
   }
 
   Widget _buildPostsGrid() {
+    if (_isLoadingPosts) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    if (_postsError != null) {
+      return Center(child: Text(_postsError!));
+    }
+
+    if (_userPosts.isEmpty) {
+      return Center(
+        child: Text(
+          'No posts yet',
+          style: TextStyle(color: Colors.grey.shade500),
+        ),
+      );
+    }
+
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-      itemCount: 12,
+      itemCount: _userPosts.length,
       itemBuilder: (context, index) {
+        final post = _userPosts[index];
+        final mediaUrl = post.media.isNotEmpty ? post.media.first : null;
         return Container(
           color: Colors.grey.shade900,
-          child: Center(
-            child: Icon(Icons.image, color: Colors.grey.shade600),
-          ),
+          child: mediaUrl == null || mediaUrl.isEmpty
+              ? Center(
+                  child: Icon(Icons.image, color: Colors.grey.shade600),
+                )
+              : Image.network(
+                  mediaUrl,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Center(
+                      child: Icon(Icons.broken_image, color: Colors.grey.shade600),
+                    );
+                  },
+                ),
         );
       },
     );
@@ -215,7 +305,10 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
               context.read<AuthProvider>().logout();
               Navigator.pop(context);
             },
-            child: const Text('Logout', style: TextStyle(color: Colors.red)),
+            child: Text(
+              'Logout',
+              style: TextStyle(color: Theme.of(context).colorScheme.primary),
+            ),
           ),
         ],
       ),

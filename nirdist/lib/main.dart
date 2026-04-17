@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/app_providers.dart';
 import 'providers/auth_provider.dart';
+import 'providers/chat_provider.dart';
+import 'providers/call_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/discover_screen.dart';
 import 'screens/create_screen.dart';
@@ -9,8 +11,11 @@ import 'screens/activity_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/signup_screen.dart';
+import 'services/api_client.dart';
 
-void main() {
+void main() async {
+  // Initialize token from persistent storage before running the app
+  await ApiClient.initializeToken();
   runApp(const MyApp());
 }
 
@@ -19,23 +24,35 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = ColorScheme.fromSeed(
+      seedColor: const Color(0xFF6EB6FF),
+      brightness: Brightness.dark,
+    );
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => PostProvider()),
         ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => StoryProvider()),
+        ChangeNotifierProvider(create: (_) => ChatProvider()),
+        ChangeNotifierProvider(create: (_) => CallProvider()),
       ],
       child: MaterialApp(
         title: 'Nirdist',
         theme: ThemeData(
           useMaterial3: true,
-          brightness: Brightness.dark,
-          primarySwatch: Colors.red,
-          scaffoldBackgroundColor: Colors.black,
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.black,
+          colorScheme: colorScheme,
+          scaffoldBackgroundColor: const Color(0xFF0B1020),
+          appBarTheme: AppBarTheme(
+            backgroundColor: const Color(0xFF0B1020),
             elevation: 0,
+            foregroundColor: colorScheme.onBackground,
+          ),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: const Color(0xFF0B1020),
+            selectedItemColor: colorScheme.primary,
+            unselectedItemColor: Colors.blueGrey.shade400,
           ),
         ),
         home: const AuthGate(),
@@ -115,9 +132,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           currentIndex: _selectedIndex,
           onTap: (index) => setState(() => _selectedIndex = index),
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.black,
-          selectedItemColor: Colors.red,
-          unselectedItemColor: Colors.grey,
+          backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+          selectedItemColor: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+          unselectedItemColor: Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Discover'),

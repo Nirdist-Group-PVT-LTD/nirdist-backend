@@ -4,6 +4,7 @@ import '../providers/app_providers.dart';
 import '../widgets/post_card.dart';
 import '../widgets/story_carousel.dart';
 import '../widgets/note_bubble.dart';
+import 'chat_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -36,7 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Nirdist', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         elevation: 0,
         actions: [
-          IconButton(icon: const Icon(Icons.message), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.message),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const ChatListScreen(),
+                ),
+              );
+            },
+          ),
         ],
       ),
       body: Consumer<PostProvider>(

@@ -44,6 +44,13 @@ dependencies:
   # Media selection
   image_picker: ^1.0.0
   video_player: ^2.7.0
+  
+  # Persistent storage for tokens and user data
+  shared_preferences: ^2.2.2
+
+  # Realtime messaging + calls
+  stomp_dart_client: ^3.0.1
+  flutter_webrtc: ^1.4.1
 
 # dev_dependencies:
 #   flutter_test:
